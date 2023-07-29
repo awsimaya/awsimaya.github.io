@@ -7,7 +7,7 @@ theme="hugo-sustain"
   name = "Profile"
   weight = 100
   identifier = "projects"
-  url = "/_me"
+  url = "/me"
 
 [params]
   avatar = "img/profile_imaya.jpeg"
