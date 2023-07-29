@@ -1,26 +1,25 @@
 ---
 ---
 
-### Intro
-
 My name is **Imaya** Kumar Jagannathan and I currently work at [Amazon Web Services (AWS)](https://aws.amazon.com/) as World Wide Principal Specialist Solutions Architect, focusing on Observability. 
 
 I am a recognized thought leader, public speaker and blog author in the Observability space, and I actively publish articles, blog posts, guides, videos etc on a regular basis in the intent to help the technical community achieve greater results in their Observability journey.
 
-I regularly speak at events such as [AWS re:Invent](https://reinvent.awsevents.com/), [AWS Summits](https://aws.amazon.com/events/summits/), [KubeCon](https://aws.amazon.com/eks/container_day/), [SLOconf](https://www.sloconf.com/speakers#imaya-kumar-jagannathan) etc.
+I regularly speak at events such as [AWS re:Invent](https://reinvent.awsevents.com/), [AWS Summits](https://aws.amazon.com/events/summits/), [KubeCon](https://aws.amazon.com/eks/container_day/), [SLOconf](https://www.sloconf.com/speakers#imaya-kumar-jagannathan), [DeveloperWeek](https://hopin.com/events/developerweek-global-cloud-2021#speakers) etc.
 
 I lead, mentor and grow Technical Solution Architects from all around the world in the Observability space. My efforts at AWS has resulted in creation of a strong cohort of Technical Architects who function as leaders in the Observability space that are able to advocate and provide architectural guidance to AWS customers.
 
-I hang out a lot on [LinkedIn here](https://www.linkedin.com/in/imaya/). Happy to connect!
+I hang out a lot on [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!
 
 ### Blogs I have authored
-* [AWS Blogs - over 60 articles and still counting)](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
-> The above link will show search results for the word **_imaya kumar_** in the AWS Blogs website showing all the posts I either authored solely or along with a partner.
+* [AWS Blogs - over 60 articles and still counting](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
+
+_The above link will show search results for the word **_imaya kumar_** in the AWS Blogs website showing all the posts I either authored solely or along with a partner._
 
 * [Microsoft Blogs](https://learn.microsoft.com/en-us/archive/blogs/imayak/)
 
 ### Speaking engagements (for which recorded video is publicly available)
-> All videos linked here are posted on channels owned by [Amazon Web Services (AWS)](https://aws.amazon.com/)
+_All videos linked here are posted on channels owned by [Amazon Web Services (AWS)](https://aws.amazon.com/)_
 
 #### Large scale public events:
 * AWS Summit Washington, DC 2023 - [Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus](https://youtu.be/pVTjCTXwk2I?t=6122)
@@ -61,10 +60,12 @@ I hang out a lot on [LinkedIn here](https://www.linkedin.com/in/imaya/). Happy t
 
 * [The official Observability workshop for AWS - One Observability Workshop](https://observability.workshop.aws/)
 > Launched in 2019 and being updated with new features every week since launch, this is a hands-on, self-guided workshop that you can go through to learn all about AWS Observability services and features. This includes AWS native Observability services such as Amazon CloudWatch and AWS X-Ray and also learn about AWS managed open-source Observability services such as Amazon Managed Service for Prometheus, Amazon Managed Grafana and AWS Distro for Open Telemetry.
+
 > The website is frequented by 700,000 users every year and has been deployed more than 25,000 times since launch. The general consensus is that this artifact helped AWS customers get exposed to AWS Observability services faster and as a result made significant revenue contributions to AWS.
 
 * [The official Observability Best Practices Guide](https://aws-observability.github.io/observability-best-practices/)
 > Launched in 2022, and being maintained through the support of dozens of AWS Solution Architects, this is a site that helps customers understand the nitty-gritty details of implementing Observability in their environment. This website provides thought leadership in various technical areas such as Containers, Serverless, on-prem workloads, Amazon EC2, and covers operational areas such as best practices is operating open telemetry collectors at scale, etc. 
+
 > I regularly form cohorts of highly technical Solution Architects in the field to create various pieces of highly technical content, perform technical review, assess accuracy, provide feedback to keep the site latest and accurate to changing technology trends.
 
 * [AWS Observability Accelerator](https://aws-observability.github.io/terraform-aws-observability-accelerator/)
@@ -75,8 +76,6 @@ I hang out a lot on [LinkedIn here](https://www.linkedin.com/in/imaya/). Happy t
 * [Imaya Kumar Jagannathan: Inspiring Change and Empowering Communities](https://nyweekly.com/lifestyle/imaya-kumar-jagannathan-inspiring-change-and-empowering-communities/)
 * [Charting New Terrains in Observability: The Imaya Kumar Jagannathan Story](https://www.freepressjournal.in/tech/charting-new-terrains-in-observability-the-imaya-kumar-jagannathan-story)
 * [Globee Award - Volunteering as an Industry Expert and Judge](https://globeeawards.com/imaya-kumar-jagannathan/)
-
-
 
 ### Mentions of my work in 3rd party websites
 

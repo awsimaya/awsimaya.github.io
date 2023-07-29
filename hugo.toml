@@ -4,7 +4,7 @@ title = 'Imaya Kumar Jagannathan'
 theme="hugo-sustain"
 
 [[menu.main]]
-  name = "Profile Details"
+  name = "Profile"
   weight = 100
   identifier = "projects"
   url = "/_me"
