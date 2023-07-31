@@ -22,6 +22,7 @@ _The above link will show search results for the word **_imaya kumar_** in the A
 _All videos linked here are posted on channels owned by [Amazon Web Services (AWS)](https://aws.amazon.com/)_
 
 #### Large scale public events:
+* AWS Summit New York, 2023 - [Fidelity’s observability platform for telemetry](https://www.linkedin.com/posts/imaya_fidelity-aws-observability-activity-7090013116192751616-NecF)
 * AWS Summit Washington, DC 2023 - [Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus](https://youtu.be/pVTjCTXwk2I?t=6122)
 * KubeCon EU 2023 - [Operating Open Telemetry Collector for Scale and Resiliency](https://youtu.be/LGD52z0LxAA?t=18048)
 * AWS re:Invent 2022 - [Observability the Open Source Way](https://www.youtube.com/watch?v=2IJPpdp9xU0&t=591s&pp=ygUYYXdzIHJlaW52ZW50IGltYXlhIGt1bWFy)
