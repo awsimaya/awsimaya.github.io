@@ -11,17 +11,17 @@ I lead, mentor and grow Technical Solution Architects from all around the world 
 
 I hang out a lot on [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!
 
-### Blogs I have authored
-* [AWS Blogs - over 60 articles and still counting](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
+### Blogs authored
+* [AWS Blogs - Over 60 articles and still counting...](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
 
 _The above link will show search results for the word **_imaya kumar_** in the AWS Blogs website showing all the posts I either authored solely or along with a partner._
 
 * [Microsoft Blogs](https://learn.microsoft.com/en-us/archive/blogs/imayak/)
 
-### Speaking engagements (for which recorded video is publicly available)
+### Speaking engagements
 _All videos linked here are posted on channels owned by [Amazon Web Services (AWS)](https://aws.amazon.com/)_
 
-#### Large scale public events:
+#### Large scale public events
 * AWS Summit New York, 2023 - [Fidelity’s observability platform for telemetry](https://www.linkedin.com/posts/imaya_fidelity-aws-observability-activity-7090013116192751616-NecF)
 * AWS Summit Washington, DC 2023 - [Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus](https://youtu.be/pVTjCTXwk2I?t=6122)
 * KubeCon EU 2023 - [Operating Open Telemetry Collector for Scale and Resiliency](https://youtu.be/LGD52z0LxAA?t=18048)
@@ -31,6 +31,7 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * KubeCon EU 2021 - [Launching Amazon Managed Service for Prometheus](https://www.youtube.com/watch?v=MZ-4HzOC_ac&t=25191s)
 * AWS re:Invent 2021 - [Observability the Open Source Way](https://www.youtube.com/watch?v=iyHzC6DhRVw&t=1618s)
 *  AWS re:Invent 2020 - [Increase availability with AWS observability solutions](https://www.youtube.com/watch?v=_d_9xCfVBTM)
+* AWS re:Invent 2019 - [Monitoring modern apps:Containers, microservices, and more](https://d1.awsstatic.com/events/reinvent/2019/REPEAT_3_Monitoring_modern_apps_Containers,_microservices,_and_more_MGT308-R3.pdf)
 * AWS re:Invent 2018 - [Thomson Reuters: How It Hosted NET App on ECS Using Windows Containers](https://www.youtube.com/watch?v=75p2ete1Cqo)
 
 #### Other events
