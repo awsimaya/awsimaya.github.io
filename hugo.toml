@@ -16,7 +16,8 @@ theme="hugo-sustain"
 
 [params.social]
   Github        = "awsimaya"
-  Twitter       = "imaya"
+  #Twitter       = "imaya"
   LinkedIn      = "imaya"
+  Threads       = "imayakumar"
 
 
