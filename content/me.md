@@ -22,7 +22,7 @@ _The above link will show search results for the word **_imaya kumar_** in the A
 _All videos linked here are posted on channels owned by [Amazon Web Services (AWS)](https://aws.amazon.com/)_
 
 #### Large scale public events
-* AWS Summit New York, 2023 - [Fidelity’s observability platform for telemetry](https://www.linkedin.com/posts/imaya_fidelity-aws-observability-activity-7090013116192751616-NecF)
+* AWS Summit New York 2023 - [Fidelity’s observability platform for telemetry](https://www.linkedin.com/posts/imaya_fidelity-aws-observability-activity-7090013116192751616-NecF)
 * AWS Summit Washington, DC 2023 - [Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus](https://youtu.be/pVTjCTXwk2I?t=6122)
 * KubeCon EU 2023 - [Operating Open Telemetry Collector for Scale and Resiliency](https://youtu.be/LGD52z0LxAA?t=18048)
 * AWS re:Invent 2022 - [Observability the Open Source Way](https://www.youtube.com/watch?v=2IJPpdp9xU0&t=591s&pp=ygUYYXdzIHJlaW52ZW50IGltYXlhIGt1bWFy)
@@ -35,6 +35,7 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * AWS re:Invent 2018 - [Thomson Reuters: How It Hosted NET App on ECS Using Windows Containers](https://www.youtube.com/watch?v=75p2ete1Cqo)
 
 #### Other events
+* Containers from the Couch 2023 - [CDK Observability Accelerator Deep Dive](https://youtu.be/F6V4vscvOeY?t=114)
 * Nobl9 Webinar - [AWS Observability and Nobl9: A Journey to Optimize the Metrics Stack](https://www.youtube.com/watch?v=gTXACKl4GiI)
 * Containers from the Couch 2022 - [Launching EKS Observability Accelerator](https://youtu.be/7jMtbCDOIqw?t=854)
 * AWS Online Tech Talk 2022 - [Implementing Observability with Amazon Managed Open Source Services](https://www.youtube.com/watch?v=YlupF_OAGIg)
@@ -43,7 +44,6 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * Containers from the Couch 2021 - [Monitoring container workloads with Amazon Managed Service for Prometheus and Grafana](https://www.youtube.com/watch?v=Bh71xBQe92I&t=1575s)
 
 #### Videos on .NET development
-
 * [Using AWS Lambda Layers in .NET](https://www.youtube.com/watch?v=EF1NES9BX8c)
 * [How to Create a .NET Based AWS Lambda to Receive Events from an IoT Button and Send Data to Kinesis](https://www.youtube.com/watch?v=-6k-TFV3M8o)
 * [How to Use Amazon Translate Service through .NET](https://www.youtube.com/watch?v=yBmxRdB--4Q)
@@ -51,7 +51,6 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * [Playlist of open-source Observability focused videos that I lead generate through an agency](https://www.youtube.com/playlist?list=PLhr1KZpdzukfPLDAQcxjPETw3IgDFXfre)
 
 ### Other public events/body of work
-
 * The NewStack - [SLO driven monitoring](https://thenewstack.io/no-more-fomo-efficiency-in-slo-driven-monitoring/)
 * Dataversity - [Observability Maturity Model: A Framework to Enhance Monitoring and Observability Practices](https://www.dataversity.net/observability-maturity-model-a-framework-to-enhance-monitoring-and-observability-practices/)
 * Techstrong.tv - [Panel discussion on SLO monitoring](https://techstrong.tv/videos/interviews/sloconf-kit-merker-nobl9)
