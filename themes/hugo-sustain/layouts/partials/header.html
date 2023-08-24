@@ -3,13 +3,18 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ .Site.BaseURL }}">
         <!-- <i class="fa-regular fa-house"></i> -->
-        <span class="nav-item">Home</span>
+        <span class="nav-item" style="text-decoration-line: overline; text-decoration-color: #3a94f4;">Home</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar">
+      
+      <a class="navbar-brand" href="/me">
+        <!-- <i class="fa-regular fa-house"></i> -->
+        <span class="nav-item" style="text-decoration-line: overline; text-decoration-color: #3a94f4;">Profile</span>
+      </a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar">
         <i class="fa fa-bars"></i>
-      </button>
+      </button> -->
 
-      <div id="navbar" class="collapse navbar-collapse">
+      <!-- <div id="navbar" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           {{ if .Site.Menus.main }}
             {{ range .Site.Menus.main }}
@@ -19,7 +24,7 @@
             {{ end }}
           {{ end }}
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
 </nav>

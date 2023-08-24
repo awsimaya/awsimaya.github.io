@@ -3,11 +3,6 @@ languageCode = 'en-us'
 title = 'Imaya Kumar Jagannathan'
 theme="hugo-sustain"
 
-[[menu.main]]
-  name = "Profile"
-  weight = 100
-  identifier = "projects"
-  url = "/me"
 
 [params]
   avatar = "img/profile_imaya.jpeg"
