@@ -80,6 +80,7 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 
 ### Mentions of my work in 3rd party websites
 
+* [https://dev.to/aws/aws-open-source-newsletter-171-4o49](https://dev.to/aws/aws-open-source-newsletter-171-4o49)
 * [https://dev.to/aws/aws-open-source-news-and-updates-111-1dj3](https://dev.to/aws/aws-open-source-news-and-updates-111-1dj3)
 * [https://dev.to/aws/aws-open-source-news-and-updates-no-20-hd3](https://dev.to/aws/aws-open-source-news-and-updates-no-20-hd3)
 * [https://dev.to/aws/aws-open-source-newsletter-146-26bh](https://dev.to/aws/aws-open-source-newsletter-146-26bh)
