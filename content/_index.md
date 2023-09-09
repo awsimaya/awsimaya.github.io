@@ -9,6 +9,8 @@ My passions include, Observability, Software development, Modernization, and Tec
 
 In my past, I worked at [Microsoft], [Bisk Education], [Convene] and other companies.
 
+Connect with me on [LinkedIn](https://www.linkedin.com/in/imaya).
+
 
 [projects]: /projects
 [Microsoft]: https://microsoft.com

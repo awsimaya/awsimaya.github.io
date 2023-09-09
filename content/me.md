@@ -9,7 +9,7 @@ I regularly speak at events such as [AWS re:Invent](https://reinvent.awsevents.c
 
 I lead, mentor and grow Technical Solution Architects from all around the world in the Observability space. My efforts at AWS has resulted in creation of a strong cohort of Technical Architects who function as leaders in the Observability space that are able to advocate and provide architectural guidance to AWS customers.
 
-I hang out a lot on [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!
+**My preferred mode of contact is [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!**
 
 ### Blogs authored
 * [AWS Blogs - Over 60 articles and still counting...](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
