@@ -1,7 +1,7 @@
 ---
 ---
 
-My name is **Imaya** Kumar Jagannathan and I currently work at [Amazon Web Services (AWS)](https://aws.amazon.com/) as World Wide Principal Specialist Solutions Architect, focusing on Observability. 
+My name is **Imaya** Kumar Jagannathan and I currently work at [Amazon Web Services (AWS)](https://aws.amazon.com/) leading a team of Worldwide Specialist Solutions Architects, focusing on Observability and Cloud management services. 
 
 I am a recognized thought leader, public speaker and blog author in the Observability space, and I actively publish articles, blog posts, guides, videos etc on a regular basis in the intent to help the technical community achieve greater results in their Observability journey.
 
@@ -12,7 +12,7 @@ I lead, mentor and grow Technical Solution Architects from all around the world 
 **My preferred mode of contact is [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!**
 
 ### Blogs authored
-* [AWS Blogs - Over 60 articles and still counting...](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
+* [AWS Blogs - Over 70 articles and still counting...](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
 
 _The above link will show search results for the word **_imaya kumar_** in the AWS Blogs website showing all the posts I either authored solely or along with a partner._
 

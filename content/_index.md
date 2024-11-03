@@ -3,9 +3,9 @@
 
 I'm **Imaya Kumar Jagannathan**, a Tech leader.
 
-I currently work as Worldwide Principal Specialist Solutions Architect at [AWS].
+I lead a team of Worldwide Specialist Solutions Architects at [AWS].
 
-My passions include, Observability, Software development, Modernization, and Technology optimization.
+I have extensive experience in Leading Globally Distributed High-performance Teams, Technical Strategy, Championing Organizational Technology Transformation Projects, Software Architecture, Public Speaking, Pre-Sales, Go-To-Market, and Technology Content Development.  
 
 In my past, I worked at [Microsoft], [Bisk Education], [Convene] and other companies.
 
