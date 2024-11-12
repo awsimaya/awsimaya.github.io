@@ -13,12 +13,15 @@ I lead, mentor and grow Technical Solution Architects from all around the world 
 
 **My preferred mode of contact is [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!**
 
+------
 ### Blogs authored
 * [AWS Blogs - Over 70 articles and still counting...](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
 
 _The above link will show search results for the word **_imaya kumar_** in the AWS Blogs website showing all the posts I either authored solely or along with a partner._
 
 * [Microsoft Blogs](https://learn.microsoft.com/en-us/archive/blogs/imayak/)
+
+------
 
 ### Speaking engagements
 _All videos linked here are posted on channels owned by [Amazon Web Services (AWS)](https://aws.amazon.com/)_
@@ -53,12 +56,16 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * [How to Use AWS Comprehend to Perform Sentiment Analysis on a Text](https://www.youtube.com/watch?v=Q1RWpB2juKI)
 * [Playlist of open-source Observability focused videos that I lead generate through an agency](https://www.youtube.com/playlist?list=PLhr1KZpdzukfPLDAQcxjPETw3IgDFXfre)
 
+------
+
 ### Other public events/body of work
 * The NewStack - [SLO driven monitoring](https://thenewstack.io/no-more-fomo-efficiency-in-slo-driven-monitoring/)
 * Dataversity - [Observability Maturity Model: A Framework to Enhance Monitoring and Observability Practices](https://www.dataversity.net/observability-maturity-model-a-framework-to-enhance-monitoring-and-observability-practices/)
 * Techstrong.tv - [Panel discussion on SLO monitoring](https://techstrong.tv/videos/interviews/sloconf-kit-merker-nobl9)
 * SLOconf 2023 - [FOMO vs SLO driven monitoring](https://www.youtube.com/watch?v=Yq3A85qHtnc)
 * [Developerweek conference 2021](https://hopin.com/events/developerweek-global-cloud-2021#speakers)
+
+------
 
 ### Significant public artifacts 
 
@@ -80,6 +87,8 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * [Imaya Kumar Jagannathan: Inspiring Change and Empowering Communities](https://nyweekly.com/lifestyle/imaya-kumar-jagannathan-inspiring-change-and-empowering-communities/)
 * [Charting New Terrains in Observability: The Imaya Kumar Jagannathan Story](https://www.freepressjournal.in/tech/charting-new-terrains-in-observability-the-imaya-kumar-jagannathan-story)
 * [Globee Award - Volunteering as an Industry Expert and Judge](https://globeeawards.com/imaya-kumar-jagannathan/)
+
+------
 
 ### Mentions of my work in 3rd party websites
 
