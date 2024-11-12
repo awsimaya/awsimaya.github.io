@@ -82,6 +82,8 @@ _All videos linked here are posted on channels owned by [Amazon Web Services (AW
 * [AWS Observability Accelerator](https://aws-observability.github.io/terraform-aws-observability-accelerator/)
 > Launched in 2022, this is a Terraform based software package that helps setting up Observability for [Amazon EKS](https://aws.amazon.com/eks/) environments easy and simple. This leverages the [AWS Distro for Open Telemetry Collector](https://github.com/aws-observability/aws-otel-collector) to automatically collect infrastructure metrics, Kubernetes control plane metrics, application metrics and traces from the environment and publishes several dashboards on Amazon Managed Grafana for customers to monitor.
 
+------
+
 ### Recognitions
 
 * [Imaya Kumar Jagannathan: Inspiring Change and Empowering Communities](https://nyweekly.com/lifestyle/imaya-kumar-jagannathan-inspiring-change-and-empowering-communities/)
