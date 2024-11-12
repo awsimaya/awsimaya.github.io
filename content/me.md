@@ -5,17 +5,21 @@ My name is **Imaya** Kumar Jagannathan and I currently work at [Amazon Web Servi
 
 I am a recognized thought leader, author, public speaker and blog writer in the Observability space, and I actively publish articles, blog posts, guides, videos etc on a regular basis in the intent to help the technical community achieve greater results in their Observability journey.
 
-Find my recently published technical book on resilient architectures [here.](https://www.amazon.com/Building-Resilient-Architectures-AWS-cost-efficient/dp/B0DKNLVTDV?crid=162U64A0QP5W4&dib=eyJ2IjoiMSJ9.mR_urLPOJ58UN7Bv2pFqS0JADt7q74ZLphgeNKy0d1PUB1mBkevNJJN6cWrjHOfF.8c8rTRdWFKUqOjjdp7cq8yKGLEtZQcdHHB2ntxM4Qpo)
-
 I regularly speak at events such as [AWS re:Invent](https://reinvent.awsevents.com/), [AWS Summits](https://aws.amazon.com/events/summits/), [KubeCon](https://aws.amazon.com/eks/container_day/), [SLOconf](https://www.sloconf.com/speakers#imaya-kumar-jagannathan), [DeveloperWeek](https://hopin.com/events/developerweek-global-cloud-2021#speakers) etc.
 
-I lead, mentor and grow Technical Solution Architects from all around the world in the Observability space. My efforts at AWS has resulted in creation of a strong cohort of Technical Architects who function as leaders in the Observability space that are able to advocate and provide architectural guidance to AWS customers.
+I lead, mentor, and grow Technical Solution Architects from all around the world in the Observability space. My efforts at AWS has resulted in creation of a strong cohort of Technical Architects who function as leaders in the Observability space that are able to advocate and provide architectural guidance to AWS customers.
 
 **My preferred mode of contact is [LinkedIn](https://www.linkedin.com/in/imaya/). Happy to connect!**
 
 ------
-### Blogs authored
-* [AWS Blogs - Over 70 articles and still counting...](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
+
+### Book
+
+Co-authored a book titled [**Building Resilient Architectures on AWS**](https://www.amazon.com/Building-Resilient-Architectures-AWS-cost-efficient/dp/B0DKNLVTDV?crid=162U64A0QP5W4&dib=eyJ2IjoiMSJ9.mR_urLPOJ58UN7Bv2pFqS0JADt7q74ZLphgeNKy0d1PUB1mBkevNJJN6cWrjHOfF.8c8rTRdWFKUqOjjdp7cq8yKGLEtZQcdHHB2ntxM4Qpo) that covers resilient architectures at depth. It is an exhaustive guide that helps the reader build cost-efficient, resilient architectures on AWS. 
+
+------
+### Blogs
+* [AWS Blogs - Published over 70 articles and still counting](https://aws.amazon.com/search/?searchQuery=imaya+kumar)
 
 _The above link will show search results for the word **_imaya kumar_** in the AWS Blogs website showing all the posts I either authored solely or along with a partner._
 
