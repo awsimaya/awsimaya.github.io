@@ -1,7 +1,7 @@
 ---
 ---
 
-I'm **Imaya Kumar Jagannathan**, a Tech leader, and Author.
+I'm **Imaya Kumar Jagannathan**, a Tech leader, Author, and Aviation enthusiast.
 
 I lead a team of Worldwide Specialist Solutions Architects at [AWS].
 
