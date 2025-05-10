@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/awsimaya.github.io/static/css/main.3733ea40.chunk.css",
+    "main.js": "/awsimaya.github.io/static/js/main.44de243b.chunk.js",
+    "main.js.map": "/awsimaya.github.io/static/js/main.44de243b.chunk.js.map",
+    "runtime-main.js": "/awsimaya.github.io/static/js/runtime-main.63c0c8d4.js",
+    "runtime-main.js.map": "/awsimaya.github.io/static/js/runtime-main.63c0c8d4.js.map",
+    "static/js/2.24904b5e.chunk.js": "/awsimaya.github.io/static/js/2.24904b5e.chunk.js",
+    "static/js/2.24904b5e.chunk.js.map": "/awsimaya.github.io/static/js/2.24904b5e.chunk.js.map",
+    "static/js/3.79be42bc.chunk.js": "/awsimaya.github.io/static/js/3.79be42bc.chunk.js",
+    "static/js/3.79be42bc.chunk.js.map": "/awsimaya.github.io/static/js/3.79be42bc.chunk.js.map",
+    "index.html": "/awsimaya.github.io/index.html",
+    "precache-manifest.127bf01a69718b12df0eaca5faeb3eef.js": "/awsimaya.github.io/precache-manifest.127bf01a69718b12df0eaca5faeb3eef.js",
+    "service-worker.js": "/awsimaya.github.io/service-worker.js",
+    "static/css/main.3733ea40.chunk.css.map": "/awsimaya.github.io/static/css/main.3733ea40.chunk.css.map",
+    "static/js/2.24904b5e.chunk.js.LICENSE.txt": "/awsimaya.github.io/static/js/2.24904b5e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.63c0c8d4.js",
+    "static/js/2.24904b5e.chunk.js",
+    "static/css/main.3733ea40.chunk.css",
+    "static/js/main.44de243b.chunk.js"
+  ]
+}
