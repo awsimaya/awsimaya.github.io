@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background-color:rgb(243, 244, 245);
-  padding: .5rem 0;
+  background-color: rgb(243, 244, 245);
+  padding: 0.5rem 0;
   text-align: center;
   margin-top: 2rem;
   border-top: 1px solid #e9ecef;
@@ -11,8 +11,9 @@ const FooterContainer = styled.footer`
 
 const FooterText = styled.p`
   margin: 0;
-  color: #6c757d;
-  font-size: 0.9rem;
+  color: rgb(119, 117, 116);
+  font-size: 0.8rem;
+  font-family: 'Pangolin', cursive !important; /* Override global font */
 `;
 
 const Footer = () => {
