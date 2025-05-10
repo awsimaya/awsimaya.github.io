@@ -1,4 +1,4 @@
-(this["webpackJsonpimayakumar.com"]=this["webpackJsonpimayakumar.com"]||[]).push([[0],{19:function(e,t,a){e.exports=a(33)},29:function(e,t,a){},32:function(e,t,a){},33:function(e,t,a){"use strict";a.r(t);var r=a(0),n=a.n(r),o=a(11),l=a.n(o),i=a(14),s=a.n(i),c=(a(29),a(8)),m=a(2),p=a(3);const d=p.a.nav`
+(this["webpackJsonpawsimaya.github.io"]=this["webpackJsonpawsimaya.github.io"]||[]).push([[0],{19:function(e,t,a){e.exports=a(33)},29:function(e,t,a){},32:function(e,t,a){},33:function(e,t,a){"use strict";a.r(t);var r=a(0),n=a.n(r),o=a(11),l=a.n(o),i=a(14),s=a.n(i),c=(a(29),a(8)),m=a(2),p=a(3);const d=p.a.nav`
   display: flex;
   justify-content: center;
   padding: 1rem 0;
@@ -537,4 +537,4 @@
 `,ke=p.a.main`
   flex: 1;
 `;var Se=function(){return n.a.createElement(c.a,null,n.a.createElement(xe,null,n.a.createElement(b,null),n.a.createElement(ke,null,n.a.createElement(m.c,null,n.a.createElement(m.a,{path:"/",element:n.a.createElement(N,null)}),n.a.createElement(m.a,{path:"/activities",element:n.a.createElement(ie,null)}),n.a.createElement(m.a,{path:"/books",element:n.a.createElement(ve,null)}),n.a.createElement(m.a,{path:"/resume",element:n.a.createElement(ye,null)}))),n.a.createElement(E,null)))};var Ae=e=>{e&&e instanceof Function&&a.e(3).then(a.bind(null,34)).then(t=>{let{getCLS:a,getFID:r,getFCP:n,getLCP:o,getTTFB:l}=t;a(e),r(e),n(e),o(e),l(e)})};l.a.initialize("G-GK7S5LG4GB"),l.a.send("pageview");s.a.createRoot(document.getElementById("root")).render(n.a.createElement(n.a.StrictMode,null,n.a.createElement(Se,null))),Ae()}},[[19,1,2]]]);
-//# sourceMappingURL=main.75802ad8.chunk.js.map
+//# sourceMappingURL=main.41615061.chunk.js.map
