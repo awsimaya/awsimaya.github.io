@@ -1,0 +1,31 @@
+/* Global styles for the entire application */
+
+/* Apply Noto Serif font to all elements */
+* {
+  font-family: 'Noto Serif', serif;
+}
+
+/* Ensure specific elements use Noto Serif */
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, option {
+  font-family: 'Noto Serif', serif;
+}
+
+/* Main container styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.5rem;
+  }
+}

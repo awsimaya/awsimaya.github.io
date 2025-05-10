@@ -1,0 +1,53 @@
+/* Import Noto Serif font if you want to host it locally instead of using Google Fonts */
+/* @font-face {
+  font-family: 'Noto Serif';
+  src: url('/fonts/NotoSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Serif', serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, option {
+  font-family: 'Noto Serif', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlighted-link {
+  color: #0066cc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.highlighted-link:hover {
+  color: #004c99;
+  text-decoration: underline;
+}
