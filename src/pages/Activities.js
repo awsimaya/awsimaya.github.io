@@ -650,7 +650,7 @@ const Activities = () => {
       <Subtitle>Recognitions and Awards</Subtitle>
 
       <CardGrid>
-        <AwardCard href="https://nyweekly.com/lifestyle/imaya-kumar-jagannathan-inspiring-change-and-empowering-communities/" target="_blank" rel="noopener noreferrer">
+        {/* <AwardCard href="https://nyweekly.com/lifestyle/imaya-kumar-jagannathan-inspiring-change-and-empowering-communities/" target="_blank" rel="noopener noreferrer">
           <AwardTitle>Imaya Kumar Jagannathan: Inspiring Change and Empowering Communities</AwardTitle>
           <AwardDescription>NY Weekly</AwardDescription>
         </AwardCard>
@@ -663,7 +663,7 @@ const Activities = () => {
         <AwardCard href="https://globeeawards.com/imaya-kumar-jagannathan/" target="_blank" rel="noopener noreferrer">
           <AwardTitle>Globee Award - Volunteering as an Industry Expert and Judge</AwardTitle>
           <AwardDescription>Globee Awards</AwardDescription>
-        </AwardCard>
+        </AwardCard> */}
 
         {/* New Awards */}
         <AwardCard>
