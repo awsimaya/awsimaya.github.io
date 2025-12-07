@@ -456,6 +456,12 @@ const Activities = () => {
 
       {/* First Row */}
       <CardGrid>
+        <SpeakingCard href="https://www.youtube.com/watch?v=Z-eo1FMhksg" target="_blank" rel="noopener noreferrer">
+          <EventTitle>Behind the scenes: How AWS drives operational excellence & reliability</EventTitle>
+          <EventDate>AWS re:Invent 2025</EventDate>
+          <EventLocation>Las Vegas, NV</EventLocation>
+        </SpeakingCard>
+
         <SpeakingCard href="https://www.youtube.com/watch?v=2h1oaiyQ-oU" target="_blank" rel="noopener noreferrer">
           <EventTitle>Best practices for end-to-end digital experience monitoring</EventTitle>
           <EventDate>AWS re:Invent 2024</EventDate>
