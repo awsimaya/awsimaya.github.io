@@ -479,16 +479,16 @@ const Activities = () => {
           <EventDate>AWS Summit 2023</EventDate>
           <EventLocation>New York</EventLocation>
         </SpeakingCard>
+      </CardGrid>
 
+      {/* Second Row */}
+      <CardGrid>
         <SpeakingCard href="https://youtu.be/pVTjCTXwk2I?t=6122" target="_blank" rel="noopener noreferrer">
           <EventTitle>Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus</EventTitle>
           <EventDate>AWS Summit 2023</EventDate>
           <EventLocation>Washington DC</EventLocation>
         </SpeakingCard>
-      </CardGrid>
 
-      {/* Second Row */}
-      <CardGrid>
         <SpeakingCard href="https://youtu.be/LGD52z0LxAA?t=18048" target="_blank" rel="noopener noreferrer">
           <EventTitle>Operating Open Telemetry Collector for Scale and Resiliency</EventTitle>
           <EventDate>KubeCon 2023</EventDate>
@@ -506,16 +506,16 @@ const Activities = () => {
           <EventDate>AWS Summit 2022</EventDate>
           <EventLocation>San Francisco, CA</EventLocation>
         </SpeakingCard>
+      </CardGrid>
 
+      {/* Third Row */}
+      <CardGrid>
         <SpeakingCard href="https://www.youtube.com/watch?v=GSHtAn5pTO8" target="_blank" rel="noopener noreferrer">
           <EventTitle>Implementing observability for .NET apps on AWS</EventTitle>
           <EventDate>AWS re:Invent 2021</EventDate>
           <EventLocation>Las Vegas, NV</EventLocation>
         </SpeakingCard>
-      </CardGrid>
 
-      {/* Third Row */}
-      <CardGrid>
         <SpeakingCard href="https://www.youtube.com/watch?v=MZ-4HzOC_ac&t=25191s" target="_blank" rel="noopener noreferrer">
           <EventTitle>Launching Amazon Managed Service for Prometheus</EventTitle>
           <EventDate>KubeCon EU 2021</EventDate>
@@ -533,14 +533,14 @@ const Activities = () => {
           <EventDate>AWS re:Invent 2020</EventDate>
           <EventLocation>Las Vegas, NV</EventLocation>
         </SpeakingCard>
-
+      </CardGrid>
+      <CardGrid>
         <SpeakingCard href="https://d1.awsstatic.com/events/reinvent/2019/REPEAT_3_Monitoring_modern_apps_Containers,_microservices,_and_more_MGT308-R3.pdf" target="_blank" rel="noopener noreferrer">
           <EventTitle>Monitoring modern apps: Containers, microservices, and more</EventTitle>
           <EventDate>AWS re:Invent 2019</EventDate>
           <EventLocation>Las Vegas, NV</EventLocation>
         </SpeakingCard>
-      </CardGrid>
-      <CardGrid>
+
         <SpeakingCard href="https://www.youtube.com/watch?v=75p2ete1Cqo" target="_blank" rel="noopener noreferrer">
           <EventTitle>Thomson Reuters: How It Hosted NET App on ECS Using Windows Containers</EventTitle>
           <EventDate>AWS re:Invent 2018</EventDate>
