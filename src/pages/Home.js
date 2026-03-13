@@ -35,10 +35,22 @@ const pulseDot = keyframes`
 
 const Page = styled.div`
   background: #ffffff;
-  height: calc(100vh - 52px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+
+  /* Desktop: lock to one screen, no scroll */
+  @media (min-width: 781px) {
+    height: calc(100vh - 52px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Mobile: natural height, allow scroll */
+  @media (max-width: 780px) {
+    min-height: calc(100vh - 52px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
 `;
 
 /* ─── Hero ─── */
@@ -50,9 +62,14 @@ const HeroSection = styled.section`
   padding: 2.5rem 2rem 1.5rem;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 780px) {
+    padding: 2rem 1.25rem 1.5rem;
+    align-items: flex-start;
+  }
 `;
 
-/* Decorative gradient blobs — purely atmospheric */
+/* Decorative gradient blobs */
 
 const BlobA = styled.div`
   position: absolute;
@@ -95,7 +112,7 @@ const HeroGrid = styled.div`
 
   @media (max-width: 780px) {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
     text-align: center;
   }
 `;
@@ -104,6 +121,11 @@ const HeroGrid = styled.div`
 
 const ContentSide = styled.div`
   animation: ${fadeLeft} 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+  @media (max-width: 780px) {
+    animation: ${fadeUp} 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    order: 2;
+  }
 `;
 
 const StatusBadge = styled.div`
@@ -114,15 +136,11 @@ const StatusBadge = styled.div`
   border: 1px solid rgba(48, 209, 88, 0.25);
   border-radius: 999px;
   padding: 0.35rem 0.85rem 0.35rem 0.65rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   font-size: 0.78rem;
   font-weight: 500;
   color: #1D8348;
   letter-spacing: 0.01em;
-
-  @media (max-width: 780px) {
-    display: inline-flex;
-  }
 `;
 
 const LiveDot = styled.span`
@@ -136,12 +154,18 @@ const LiveDot = styled.span`
 `;
 
 const HeroName = styled.h1`
-  font-size: clamp(2.9rem, 5.5vw, 5rem);
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
   font-weight: 800;
   color: #1D1D1F;
   letter-spacing: -0.05em;
   line-height: 0.96;
-  margin: 0 0 1.1rem 0;
+  margin: 0 0 0.9rem 0;
+
+  @media (max-width: 780px) {
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
+    line-height: 1;
+    margin: 0 0 0.75rem 0;
+  }
 `;
 
 const HeroRole = styled.p`
@@ -149,21 +173,27 @@ const HeroRole = styled.p`
   font-weight: 400;
   color: #86868B;
   letter-spacing: -0.01em;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.5;
+
+  @media (max-width: 780px) {
+    font-size: 0.95rem;
+    margin: 0 0 0.85rem 0;
+  }
 `;
 
 const HeroBio = styled.p`
   font-size: 1rem;
   line-height: 1.75;
   color: #3D3D3F;
-  margin: 0 0 1.75rem 0;
+  margin: 0 0 1.5rem 0;
   max-width: 480px;
 
   @media (max-width: 780px) {
+    font-size: 0.92rem;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 1.25rem;
+    line-height: 1.65;
   }
 `;
 
@@ -174,10 +204,11 @@ const CareerRow = styled.div`
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 
   @media (max-width: 780px) {
     justify-content: center;
+    margin-bottom: 1.25rem;
   }
 `;
 
@@ -275,6 +306,11 @@ const PhotoSide = styled.div`
   justify-content: center;
   align-items: center;
   animation: ${fadeRight} 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+  @media (max-width: 780px) {
+    animation: ${fadeUp} 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    order: 1;
+  }
 `;
 
 const PhotoContainer = styled.div`
@@ -284,7 +320,6 @@ const PhotoContainer = styled.div`
   justify-content: center;
 `;
 
-/* Large gradient glow behind photo */
 const PhotoGlow = styled.div`
   position: absolute;
   inset: -50px;
@@ -304,14 +339,21 @@ const FloatingWrapper = styled.div`
   animation: ${floatPhoto} 7s ease-in-out infinite;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 780px) {
+    animation: none;
+  }
 `;
 
-/* Gradient ring wrapping the photo */
 const PhotoRing = styled.div`
   padding: 3.5px;
   border-radius: 50%;
   background: linear-gradient(145deg, #0071E3 0%, #34AADC 40%, #30D158 100%);
   box-shadow: 0 28px 72px rgba(0, 0, 0, 0.18);
+
+  @media (max-width: 780px) {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+  }
 `;
 
 const ProfileImage = styled.img`
@@ -328,8 +370,9 @@ const ProfileImage = styled.img`
   }
 
   @media (max-width: 780px) {
-    width: 220px;
-    height: 220px;
+    width: 160px;
+    height: 160px;
+    border-width: 3px;
   }
 `;
 
@@ -338,7 +381,6 @@ const ProfileImage = styled.img`
 const CredStrip = styled.div`
   background: #F5F5F7;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
-  padding: 0;
   display: flex;
   justify-content: center;
   animation: ${fadeUp} 0.8s 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
@@ -350,17 +392,13 @@ const CredInner = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 1fr);
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (max-width: 480px) {
+  @media (max-width: 780px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
 
 const CredCell = styled.div`
-  padding: 1.5rem 0.75rem;
+  padding: 1.25rem 0.75rem;
   text-align: center;
   position: relative;
 
@@ -374,40 +412,36 @@ const CredCell = styled.div`
     background: rgba(0, 0, 0, 0.09);
   }
 
-  @media (max-width: 760px) {
-    &:nth-child(3)::after {
-      display: none;
-    }
-    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.09);
-    }
-  }
+  @media (max-width: 780px) {
+    padding: 1.1rem 0.75rem;
 
-  @media (max-width: 480px) {
-    &:nth-child(2)::after {
+    /* Hide the right-side vertical divider on even cells (right column) */
+    &:nth-child(even)::after {
       display: none;
     }
-    &:nth-child(odd) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+
+    /* Add bottom border between rows, except last two cells */
+    &:not(:nth-last-child(-n+2)) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     }
   }
 `;
 
 const CredValue = styled.p`
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: #1D1D1F;
-  letter-spacing: -0.04em;
-  margin: 0 0 0.3rem 0;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.25rem 0;
   line-height: 1;
 `;
 
 const CredLabel = styled.p`
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   color: #86868B;
   font-weight: 500;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.35;
 `;
 
 const Home = () => {
@@ -531,7 +565,6 @@ const Home = () => {
             <CredValue>Transformation</CredValue>
             <CredLabel>Engineering - Director</CredLabel>
           </CredCell>
-
         </CredInner>
       </CredStrip>
     </Page>
