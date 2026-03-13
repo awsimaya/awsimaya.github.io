@@ -2,18 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background-color: rgb(243, 244, 245);
-  padding: 0.5rem 0;
+  background-color: #F5F5F7;
+  padding: 1.25rem 2rem;
   text-align: center;
-  margin-top: 2rem;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 `;
 
 const FooterText = styled.p`
   margin: 0;
-  color: rgb(119, 117, 116);
-  font-size: 0.8rem;
-  font-family: 'Pangolin', cursive !important; /* Override global font */
+  color: #86868B;
+  font-size: 0.78rem;
+  font-family: 'Pangolin', cursive !important;
+  letter-spacing: 0.01em;
 `;
 
 const Footer = () => {
