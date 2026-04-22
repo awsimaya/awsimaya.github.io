@@ -464,22 +464,25 @@ const Home = () => {
             </HeroName>
 
             <HeroRole>
-              Specialist Solutions Architect Leader · AWS
+              Sr. Manager, Worldwide Specialist SA &amp; Principal Architect · AWS
             </HeroRole>
 
             <HeroBio>
-              Technology leader, author, and aviation enthusiast building
-              the future of cloud observability — leading a global team
-              of Specialist Solutions Architects at scale.
+              Technology executive with 22+ years building scalable systems and
+              leading AI-powered transformation at global scale. Currently leading
+              a worldwide technical organization at AWS supporting a $4.2B business —
+              published author, keynote speaker, and recognized thought leader.
             </HeroBio>
 
             <CareerRow>
               <CareerLabel>Career</CareerLabel>
               <CareerPill $current>AWS</CareerPill>
               <CareerSep>·</CareerSep>
+              <CareerPill>Bisk Education</CareerPill>
+              <CareerSep>·</CareerSep>
               <CareerPill>Microsoft</CareerPill>
               <CareerSep>·</CareerSep>
-              <CareerPill>Virtusa</CareerPill>
+              <CareerPill>HP / Virtusa</CareerPill>
             </CareerRow>
 
             <ActionRow>
@@ -534,36 +537,36 @@ const Home = () => {
       <CredStrip>
         <CredInner>
           <CredCell>
-            <CredValue>Mentor</CredValue>
-            <CredLabel>Obsessed with People development</CredLabel>
+            <CredValue>22+</CredValue>
+            <CredLabel>Years of Technology Leadership</CredLabel>
           </CredCell>
           <CredCell>
-            <CredValue>40+</CredValue>
-            <CredLabel>Public Speaking Engagements</CredLabel>
+            <CredValue>$4.2B</CredValue>
+            <CredLabel>AWS Business Supported</CredLabel>
           </CredCell>
           <CredCell>
-            <CredValue>14</CredValue>
-            <CredLabel>Product Launches</CredLabel>
+            <CredValue>60K+</CredValue>
+            <CredLabel>Workshop Users Worldwide</CredLabel>
           </CredCell>
           <CredCell>
-            <CredValue>$2B+</CredValue>
-            <CredLabel>Sales Opportunity Growth</CredLabel>
+            <CredValue>30K+</CredValue>
+            <CredLabel>Customer Deployments</CredLabel>
+          </CredCell>
+          <CredCell>
+            <CredValue>12</CredValue>
+            <CredLabel>AWS Managed Service Launches</CredLabel>
+          </CredCell>
+          <CredCell>
+            <CredValue>$700M+</CredValue>
+            <CredLabel>Enterprise Revenue Influenced</CredLabel>
           </CredCell>
           <CredCell>
             <CredValue>70+</CredValue>
             <CredLabel>Published AWS Articles</CredLabel>
           </CredCell>
           <CredCell>
-            <CredValue>Global</CredValue>
-            <CredLabel>SA Leadership Team</CredLabel>
-          </CredCell>
-          <CredCell>
             <CredValue>Author</CredValue>
             <CredLabel>Building Resilient Architectures</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>Transformation</CredValue>
-            <CredLabel>Engineering - Director</CredLabel>
           </CredCell>
         </CredInner>
       </CredStrip>
