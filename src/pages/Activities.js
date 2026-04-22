@@ -515,6 +515,53 @@ const AwardDescription = styled.p`
   line-height: 1.5;
 `;
 
+/* ─── Career Milestone Cards ─── */
+
+const MilestoneGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const MilestoneCard = styled.div`
+  background: ${({ $accent }) => `linear-gradient(145deg, #ffffff 60%, ${$accent || 'rgba(0,0,0,0.02)'} 100%)`};
+  border-radius: 16px;
+  padding: 1.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.055);
+`;
+
+const MilestoneMetric = styled.p`
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: ${({ $color }) => $color || '#1D1D1F'};
+  letter-spacing: -0.04em;
+  margin: 0 0 0.35rem 0;
+  line-height: 1;
+`;
+
+const MilestoneTitle = styled.h3`
+  font-size: 0.9rem;
+  margin: 0 0 0.45rem 0;
+  font-weight: 600;
+  color: #1D1D1F;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+`;
+
+const MilestoneDesc = styled.p`
+  font-size: 0.82rem;
+  color: #6E6E73;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.55;
+`;
+
 /* ─── Collapsible Section ─── */
 
 const CollapsibleSection = styled.div`
@@ -586,32 +633,33 @@ const Activities = () => {
 
       {/* ── Intro Hero ── */}
       <IntroBlock>
-        <IntroEyebrow>Global Technology Leadership · AWS</IntroEyebrow>
-        <IntroHeading>Building the Future of<br />Cloud Observability</IntroHeading>
+        <IntroEyebrow>22+ Years of Technology Leadership</IntroEyebrow>
+        <IntroHeading>Work, Impact &amp;<br />Achievements</IntroHeading>
         <IntroLead>
-          Leading a global team of Specialist Solutions Architects at AWS, I build
-          and mentor worldwide technical leaders who deliver enterprise-grade architectural
-          guidance — enabling millions of users to optimize cloud operations at scale.
+          Leading a worldwide technical organization at AWS supporting a $4.2B Cloud Operations
+          business — designing platforms and tooling adopted by 60,000+ users and deployed in
+          30,000+ customer environments. Building and mentoring a Technical Field Community
+          of 1,500+ technical professionals across the globe.
         </IntroLead>
       </IntroBlock>
 
       {/* ── Impact Stats ── */}
       <StatsRow>
         <StatItem>
-          <StatNum>700K+</StatNum>
-          <StatLabel>Workshop users per year</StatLabel>
+          <StatNum>60K+</StatNum>
+          <StatLabel>Workshop users · 5M+ page views</StatLabel>
         </StatItem>
         <StatItem>
-          <StatNum>70+</StatNum>
-          <StatLabel>Published AWS articles</StatLabel>
+          <StatNum>250K+</StatNum>
+          <StatLabel>Annual best practices guide views</StatLabel>
         </StatItem>
         <StatItem>
-          <StatNum>Global</StatNum>
-          <StatLabel>Team of SA leaders</StatLabel>
+          <StatNum>1,500+</StatNum>
+          <StatLabel>Technical professionals in field community</StatLabel>
         </StatItem>
         <StatItem>
           <StatNum>25+</StatNum>
-          <StatLabel>AWS leader accolades</StatLabel>
+          <StatLabel>AWS senior leader accolades</StatLabel>
         </StatItem>
       </StatsRow>
 
@@ -623,7 +671,7 @@ const Activities = () => {
           <InitiativeCard href="https://observability.workshop.aws/" target="_blank" rel="noopener noreferrer">
             <InitiativeText>
               <InitiativeCardTitle>AWS Observability Workshop</InitiativeCardTitle>
-              <InitiativeCardMeta>700,000+ learners annually</InitiativeCardMeta>
+              <InitiativeCardMeta>60,000+ users · 5M+ page views · 75+ contributors</InitiativeCardMeta>
             </InitiativeText>
             <InitiativeArrow>›</InitiativeArrow>
           </InitiativeCard>
@@ -647,7 +695,15 @@ const Activities = () => {
           <InitiativeCard href="https://aws-observability.github.io/terraform-aws-observability-accelerator/" target="_blank" rel="noopener noreferrer">
             <InitiativeText>
               <InitiativeCardTitle>AWS Observability Accelerators</InitiativeCardTitle>
-              <InitiativeCardMeta>Terraform &amp; CDK · Amazon EKS native</InitiativeCardMeta>
+              <InitiativeCardMeta>Terraform &amp; CDK · Amazon EKS native · 30K+ deployments</InitiativeCardMeta>
+            </InitiativeText>
+            <InitiativeArrow>›</InitiativeArrow>
+          </InitiativeCard>
+
+          <InitiativeCard href="https://aws-observability.github.io/observability-best-practices/maturity-model/" target="_blank" rel="noopener noreferrer">
+            <InitiativeText>
+              <InitiativeCardTitle>AWS Observability Maturity Model</InitiativeCardTitle>
+              <InitiativeCardMeta>Core framework for 4 GTM initiatives · Customer success guide</InitiativeCardMeta>
             </InitiativeText>
             <InitiativeArrow>›</InitiativeArrow>
           </InitiativeCard>
@@ -667,7 +723,7 @@ const Activities = () => {
         <ShowDescription>
           Join me for the AWS Cloud Operations Show where we dive deep into best practices, new features, and expert tips for managing and optimizing your AWS infrastructure.
         </ShowDescription>
-        <ShowMeta>Livestream every other Thursday at 2:00 PM ET · Hosted by Imaya Kumar Jagannathan &amp; Team</ShowMeta>
+        <ShowMeta>Bi-weekly livestream · 25,000+ views · Hosted by Imaya Kumar Jagannathan &amp; Team</ShowMeta>
       </ShowCard>
 
       <SectionDivider />
@@ -912,6 +968,64 @@ const Activities = () => {
           <AwardDescription>Awarded twice for high Customer Satisfaction at Microsoft</AwardDescription>
         </AwardCard>
       </CardGrid>
+
+      <SectionDivider />
+
+      <SectionLabel>Engineering Leadership · 2015–2018</SectionLabel>
+      <Subtitle>Bisk Education</Subtitle>
+
+      <MilestoneGrid>
+        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+          <MilestoneTitle>Enterprise Architecture Strategy</MilestoneTitle>
+          <MilestoneDesc>Reporting to the CTO, defined and executed the enterprise architecture strategy — standardizing tool selection, consolidating the technology footprint, and reducing operational complexity across the organization.</MilestoneDesc>
+        </MilestoneCard>
+
+        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+          <MilestoneTitle>Salesforce Organization-Wide Rollout</MilestoneTitle>
+          <MilestoneDesc>Led technical evaluation and org-wide implementation of Salesforce, establishing data-driven processes for pipeline management and executive reporting up to the CEO.</MilestoneDesc>
+        </MilestoneCard>
+
+        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+          <MilestoneTitle>Internet-Scale Cloud Platform Design</MilestoneTitle>
+          <MilestoneDesc>Led architects in designing AWS-based internet-scale systems for student application processing, payments, online ordering, and university partner integrations — including a cloud-based ESB and API Management layer.</MilestoneDesc>
+        </MilestoneCard>
+
+        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+          <MilestoneTitle>Agile &amp; DevOps Transformation</MilestoneTitle>
+          <MilestoneDesc>Led a full engineering culture shift from waterfall to Agile/DevOps — introducing CI/CD pipelines, code reviews, and sprint retrospectives. Mentored junior engineers into senior roles, building a self-sustaining engineering culture that outlasted individual contributors.</MilestoneDesc>
+        </MilestoneCard>
+      </MilestoneGrid>
+
+      <SectionDivider />
+
+      <SectionLabel>Technology Programs · 2006–2014</SectionLabel>
+      <Subtitle>Microsoft</Subtitle>
+
+      <MilestoneGrid>
+        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+          <MilestoneMetric $color="#0078D4">$2–3B</MilestoneMetric>
+          <MilestoneTitle>Global Technology Adoption Programs</MilestoneTitle>
+          <MilestoneDesc>Program managed 3 global TAPs for pre-release enterprise products — Windows Server, SQL Server, and SharePoint — across 15 countries and 150+ enterprise customers. Coordinated cross-functional teams of 18–20 spanning engineering, marketing, and GTM, influencing $2–3B in product revenue.</MilestoneDesc>
+        </MilestoneCard>
+
+        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+          <MilestoneMetric $color="#0078D4">650K</MilestoneMetric>
+          <MilestoneTitle>Largest Exchange Migration in Microsoft History</MilestoneTitle>
+          <MilestoneDesc>Lead developer for a 650,000-mailbox Exchange Online migration over 18 months. Built migration tooling so critical that the third-party vendor incorporated it into their official product. Received the "Big Team" Global Award from Steve Ballmer.</MilestoneDesc>
+        </MilestoneCard>
+
+        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+          <MilestoneMetric $color="#0078D4">500K+</MilestoneMetric>
+          <MilestoneTitle>AT&amp;T Mediaroom — Live &amp; VoD Television</MilestoneTitle>
+          <MilestoneDesc>Designed deployment architecture for Microsoft Mediaroom across 6 major US cities, enabling AT&amp;T television services for 500,000+ subscribers. Built automation tooling that reduced deployment errors by 45% and accelerated timelines by 60%.</MilestoneDesc>
+        </MilestoneCard>
+
+        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+          <MilestoneMetric $color="#0078D4">Think Week</MilestoneMetric>
+          <MilestoneTitle>Bill Gates Innovation Recognition</MilestoneTitle>
+          <MilestoneDesc>Selected from thousands of Microsoft employees for Bill Gates' annual "Think Week" program. Proposed "Smart Advertisements in Television" — context-aware interactive ads on Mediaroom predating what is now commonplace on streaming platforms. Personally recognized by Bill Gates.</MilestoneDesc>
+        </MilestoneCard>
+      </MilestoneGrid>
 
       <SectionDivider />
 
