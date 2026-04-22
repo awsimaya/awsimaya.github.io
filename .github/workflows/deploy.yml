@@ -25,9 +25,8 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Build
-        run: npm run build
+        run: node_modules/.bin/react-scripts build
         env:
-          NODE_OPTIONS: --openssl-legacy-provider
           CI: false
 
       - name: Deploy to gh-pages
