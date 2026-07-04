@@ -317,6 +317,12 @@ const AwardName = styled.span`
     font-weight: 700;
   }
 
+  &::after {
+    content: ':';
+    color: #C7C7CC;
+    font-weight: 400;
+  }
+
   @media (max-width: 480px) {
     white-space: normal;
   }
@@ -403,7 +409,7 @@ const Resume = () => {
       {/* ── Header ── */}
       <ResumeHeader>
         <Name>Imaya Kumar Jagannathan</Name>
-        <HeadlineRole>Sr. Manager, Worldwide Specialist Solution Architects &amp; Principal Specialist SA · AWS</HeadlineRole>
+        <HeadlineRole>Sr. Mgr, WW Specialist SA | Principal Specialist SA · AWS</HeadlineRole>
         <ContactLine>
           <span>Atlanta, GA</span>
           <ContactDot>·</ContactDot>
@@ -486,7 +492,7 @@ const Resume = () => {
                 <JobCompanyName>Amazon Web Services (AWS)</JobCompanyName>
                 <JobLocation>Atlanta, GA</JobLocation>
               </JobCompany>
-              <JobTitle>Sr. Manager, Worldwide Specialist Solution Architects &amp; Principal Specialist Solution Architect</JobTitle>
+              <JobTitle>Sr. Mgr, WW Specialist SA | Principal Specialist SA</JobTitle>
               <JobDates>2018 – Present</JobDates>
             </JobHeader>
             <AchievementList>
@@ -616,11 +622,11 @@ const Resume = () => {
         </SectionHeader>
         <AwardList>
           <AwardItem>
-            <AwardName>AWS "Inspiration Award" (2023)</AwardName>
+            <AwardName>AWS Inspiration Award (2023)</AwardName>
             <AwardDesc>Mentoring and coaching worldwide technical architects to achieve exceptional results</AwardDesc>
           </AwardItem>
           <AwardItem>
-            <AwardName>"Top Resolver" (2021, 2022)</AwardName>
+            <AwardName>Top Resolver (2021, 2022)</AwardName>
             <AwardDesc>Highest volume of customer technical escalation resolution at AWS</AwardDesc>
           </AwardItem>
           <AwardItem>
@@ -632,7 +638,7 @@ const Resume = () => {
             <AwardDesc>"Think Week" innovation paper on "Smart Advertisements in Television"</AwardDesc>
           </AwardItem>
           <AwardItem>
-            <AwardName>"Big Team" Global Award from Steve Ballmer</AwardName>
+            <AwardName>Big Team Global Award from Steve Ballmer</AwardName>
             <AwardDesc>Innovative tooling for the largest Exchange migration in Microsoft history (2009)</AwardDesc>
           </AwardItem>
           <AwardItem>

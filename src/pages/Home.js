@@ -474,7 +474,7 @@ const Home = () => {
             </HeroName>
 
             <HeroRole>
-              Sr. Manager, Worldwide Specialist SA &amp; Principal Architect · AWS
+              Sr. Mgr, WW Specialist SA | Principal Specialist SA · AWS
             </HeroRole>
 
             <HeroBio>
