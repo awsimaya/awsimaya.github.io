@@ -92,10 +92,19 @@ const HeadlineRole = styled.p`
 
 const ContactLine = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.25rem;
-  font-size: 0.84rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
   color: #6E6E73;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   a {
     color: #0071E3;
@@ -111,10 +120,6 @@ const ContactLine = styled.div`
 
 const ContactDot = styled.span`
   color: #C7C7CC;
-
-  @media (max-width: 480px) {
-    display: none;
-  }
 `;
 
 /* ─── Section Primitives ─── */
