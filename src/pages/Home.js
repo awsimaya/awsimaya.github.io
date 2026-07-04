@@ -35,21 +35,14 @@ const pulseDot = keyframes`
 
 const Page = styled.div`
   background: #ffffff;
+  min-height: calc(100vh - 52px);
+  display: flex;
+  flex-direction: column;
 
-  /* Desktop: lock to one screen, no scroll */
+  /* Desktop: reads as one screen on typical viewports, but scrolls
+     instead of clipping on short/zoomed viewports. */
   @media (min-width: 781px) {
-    height: calc(100vh - 52px);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  /* Mobile: natural height, allow scroll */
-  @media (max-width: 780px) {
-    min-height: calc(100vh - 52px);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+    max-height: none;
   }
 `;
 
@@ -389,16 +382,38 @@ const CredStrip = styled.div`
 const CredInner = styled.div`
   max-width: 960px;
   width: 100%;
+`;
+
+const CredGroup = styled.div`
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
 
   @media (max-width: 780px) {
     grid-template-columns: repeat(2, 1fr);
   }
 `;
 
+const CredGroupLabel = styled.p`
+  grid-column: 1 / -1;
+  margin: 1rem 0 0;
+  padding: 0 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #C7C7CC;
+
+  @media (max-width: 780px) {
+    margin-top: 0.85rem;
+  }
+`;
+
 const CredCell = styled.div`
-  padding: 1.25rem 0.75rem;
+  padding: 0.85rem 0.75rem 1.25rem;
   text-align: center;
   position: relative;
 
@@ -413,16 +428,11 @@ const CredCell = styled.div`
   }
 
   @media (max-width: 780px) {
-    padding: 1.1rem 0.75rem;
+    padding: 0.75rem 0.75rem 1.1rem;
 
     /* Hide the right-side vertical divider on even cells (right column) */
     &:nth-child(even)::after {
       display: none;
-    }
-
-    /* Add bottom border between rows, except last two cells */
-    &:not(:nth-last-child(-n+2)) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     }
   }
 `;
@@ -536,38 +546,44 @@ const Home = () => {
       {/* ── Credentials strip ── */}
       <CredStrip>
         <CredInner>
-          <CredCell>
-            <CredValue>22+</CredValue>
-            <CredLabel>Years of Technology Leadership</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>$4.2B</CredValue>
-            <CredLabel>AWS Business Supported</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>60K+</CredValue>
-            <CredLabel>Workshop Users Worldwide</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>30K+</CredValue>
-            <CredLabel>Customer Deployments</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>12</CredValue>
-            <CredLabel>AWS Managed Service Launches</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>$700M+</CredValue>
-            <CredLabel>Enterprise Revenue Influenced</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>70+</CredValue>
-            <CredLabel>Published AWS Articles</CredLabel>
-          </CredCell>
-          <CredCell>
-            <CredValue>Author</CredValue>
-            <CredLabel>Building Resilient Architectures</CredLabel>
-          </CredCell>
+          <CredGroup>
+            <CredGroupLabel>Scale</CredGroupLabel>
+            <CredCell>
+              <CredValue>22+</CredValue>
+              <CredLabel>Years of Technology Leadership</CredLabel>
+            </CredCell>
+            <CredCell>
+              <CredValue>$4.2B</CredValue>
+              <CredLabel>AWS Business Supported</CredLabel>
+            </CredCell>
+            <CredCell>
+              <CredValue>60K+</CredValue>
+              <CredLabel>Workshop Users Worldwide</CredLabel>
+            </CredCell>
+            <CredCell>
+              <CredValue>30K+</CredValue>
+              <CredLabel>Customer Deployments</CredLabel>
+            </CredCell>
+          </CredGroup>
+          <CredGroup>
+            <CredGroupLabel>Impact &amp; Recognition</CredGroupLabel>
+            <CredCell>
+              <CredValue>12</CredValue>
+              <CredLabel>AWS Managed Service Launches</CredLabel>
+            </CredCell>
+            <CredCell>
+              <CredValue>$700M+</CredValue>
+              <CredLabel>Enterprise Revenue Influenced</CredLabel>
+            </CredCell>
+            <CredCell>
+              <CredValue>70+</CredValue>
+              <CredLabel>Published AWS Articles</CredLabel>
+            </CredCell>
+            <CredCell>
+              <CredValue>Author</CredValue>
+              <CredLabel>Building Resilient Architectures</CredLabel>
+            </CredCell>
+          </CredGroup>
         </CredInner>
       </CredStrip>
     </Page>

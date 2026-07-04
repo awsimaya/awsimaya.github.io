@@ -33,7 +33,7 @@ const NavInner = styled.div`
 const NavBrand = styled(Link)`
   font-size: 1rem;
   font-weight: 700;
-  color: #1D1D1F;
+  color: ${({ theme }) => theme.colors.ink};
   letter-spacing: -0.02em;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -60,8 +60,9 @@ const NavList = styled.ul`
 const NavItem = styled.li``;
 
 const NavLink = styled(Link)`
+  position: relative;
   text-decoration: none;
-  color: ${props => props.$isActive ? '#1D1D1F' : '#6E6E73'};
+  color: ${props => props.$isActive ? props.theme.colors.ink : props.theme.colors.gray};
   font-weight: ${props => props.$isActive ? '600' : '400'};
   font-size: 0.9rem;
   padding: 0.45rem 0.8rem;
@@ -71,8 +72,21 @@ const NavLink = styled(Link)`
   letter-spacing: -0.01em;
 
   &:hover {
-    color: #1D1D1F;
+    color: ${({ theme }) => theme.colors.ink};
     background: rgba(0, 0, 0, 0.06);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.8rem;
+    right: 0.8rem;
+    bottom: 0.1rem;
+    height: 2px;
+    border-radius: 1px;
+    background: ${({ theme }) => theme.colors.accentBlue};
+    opacity: ${props => props.$isActive ? 1 : 0};
+    transition: opacity 0.18s ease;
   }
 `;
 

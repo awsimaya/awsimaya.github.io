@@ -120,6 +120,61 @@ const StatLabel = styled.p`
   line-height: 1.4;
 `;
 
+/* ─── Tabs ─── */
+
+const TABS = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'speaking', label: 'Speaking & Media' },
+  { id: 'content', label: 'Content & Publications' },
+  { id: 'recognition', label: 'Recognition & Career' },
+];
+
+const TabBar = styled.div`
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const TabButton = styled.button`
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem 1rem;
+  font-size: 0.88rem;
+  font-weight: ${({ $active }) => ($active ? 600 : 500)};
+  color: ${({ $active }) => ($active ? '#1D1D1F' : '#86868B')};
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.18s ease;
+  letter-spacing: -0.01em;
+
+  &:hover {
+    color: #1D1D1F;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    right: 0.4rem;
+    bottom: -1px;
+    height: 2px;
+    border-radius: 1px;
+    background: #0071E3;
+    opacity: ${({ $active }) => ($active ? 1 : 0)};
+    transition: opacity 0.18s ease;
+  }
+`;
+
 /* ─── Flagship Initiatives ─── */
 
 const InitiativesBlock = styled.div`
@@ -329,11 +384,13 @@ const ArticleGrid = styled.div`
   }
 `;
 
-/* ─── Speaking Engagements ─── */
+/* ─── Shared Activity Card ───
+   Speaking, technical session, .NET, publication, and award cards all
+   share identical structure/motion — only the tint and meta color vary. */
 
-const SpeakingCard = styled.a`
+const ActivityCardBase = styled.a`
   display: block;
-  background: linear-gradient(145deg, #ffffff 60%, rgba(255, 159, 10, 0.04) 100%);
+  background: linear-gradient(145deg, #ffffff 60%, ${({ $tint }) => $tint || 'rgba(0, 0, 0, 0.02)'} 100%);
   border-radius: 16px;
   padding: 1.35rem;
   height: 100%;
@@ -350,170 +407,57 @@ const SpeakingCard = styled.a`
   }
 `;
 
-const EventTitle = styled.h3`
+const CardTitle = styled.h3`
   font-size: 0.9rem;
-  margin: 0 0 0.55rem 0;
+  margin: 0 0 0.5rem 0;
   font-weight: 600;
   color: #1D1D1F;
   line-height: 1.4;
   letter-spacing: -0.01em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
-const EventDate = styled.p`
+const CardMeta = styled.p`
   font-size: 0.82rem;
-  color: #6E6E73;
+  font-weight: ${({ $bold }) => ($bold ? 600 : 500)};
   margin: 0 0 0.3rem 0;
-  font-weight: 500;
-`;
+  color: ${({ $color }) => $color || '#6E6E73'};
 
-const EventLocation = styled.p`
-  font-size: 0.8rem;
-  color: #FF9F0A;
-  font-weight: 600;
-  margin: 0;
-`;
-
-/* ─── Online Technical Sessions ─── */
-
-const TechnicalSessionCard = styled.a`
-  display: block;
-  background: linear-gradient(145deg, #ffffff 60%, rgba(175, 82, 222, 0.04) 100%);
-  border-radius: 16px;
-  padding: 1.35rem;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.055);
-  text-decoration: none;
-  color: #1D1D1F;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
-    border-color: rgba(0, 0, 0, 0.1);
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
-const TechnicalSessionTitle = styled.h3`
-  font-size: 0.9rem;
-  margin: 0 0 0.55rem 0;
-  font-weight: 600;
-  color: #1D1D1F;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-`;
-
-const TechnicalSessionDate = styled.p`
-  font-size: 0.82rem;
-  color: #AF52DE;
-  font-weight: 500;
-  margin: 0;
-`;
-
-/* ─── .NET Cards ─── */
-
-const DotNetCard = styled.a`
-  display: block;
-  background: linear-gradient(145deg, #ffffff 60%, rgba(52, 199, 89, 0.04) 100%);
-  border-radius: 16px;
-  padding: 1.35rem;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.055);
-  text-decoration: none;
-  color: #1D1D1F;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const DotNetCardTitle = styled.h3`
-  font-size: 0.9rem;
-  margin: 0;
-  font-weight: 600;
-  color: #1D1D1F;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-`;
-
-/* ─── Publications ─── */
-
-const PublicationCard = styled.a`
-  display: block;
-  background: linear-gradient(145deg, #ffffff 60%, rgba(0, 113, 227, 0.04) 100%);
-  border-radius: 16px;
-  padding: 1.35rem;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.055);
-  text-decoration: none;
-  color: #1D1D1F;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const PublicationTitle = styled.h3`
-  font-size: 0.9rem;
-  margin: 0 0 0.55rem 0;
-  font-weight: 600;
-  color: #1D1D1F;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-`;
-
-const PublicationSource = styled.p`
-  font-size: 0.82rem;
-  color: #0071E3;
-  font-weight: 500;
-  margin: 0;
-`;
-
-/* ─── Awards ─── */
-
-const AwardCard = styled.a`
-  display: block;
-  background: linear-gradient(145deg, #ffffff 60%, rgba(255, 214, 10, 0.05) 100%);
-  border-radius: 16px;
-  padding: 1.35rem;
-  height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.055);
-  text-decoration: none;
-  color: #1D1D1F;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const AwardTitle = styled.h3`
-  font-size: 0.9rem;
-  margin: 0 0 0.55rem 0;
-  font-weight: 600;
-  color: #1D1D1F;
-  line-height: 1.4;
-  letter-spacing: -0.01em;
-`;
-
-const AwardDescription = styled.p`
+const CardDescription = styled.p`
   font-size: 0.82rem;
   color: #6E6E73;
   font-weight: 400;
   margin: 0;
   line-height: 1.5;
 `;
+
+const ActivityCard = ({ href, tint, children }) => (
+  <ActivityCardBase
+    as={href ? 'a' : 'div'}
+    href={href}
+    target={href ? '_blank' : undefined}
+    rel={href ? 'noopener noreferrer' : undefined}
+    $tint={tint}
+  >
+    {children}
+  </ActivityCardBase>
+);
+
+const TINTS = {
+  speaking: 'rgba(255, 159, 10, 0.04)',
+  session: 'rgba(175, 82, 222, 0.04)',
+  dotnet: 'rgba(52, 199, 89, 0.04)',
+  publication: 'rgba(0, 113, 227, 0.04)',
+  award: 'rgba(255, 214, 10, 0.05)',
+};
 
 /* ─── Career Milestone Cards ─── */
 
@@ -622,6 +566,7 @@ const LinkItem = styled.li`
 `;
 
 const Activities = () => {
+  const [activeTab, setActiveTab] = useState('overview');
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
@@ -663,373 +608,387 @@ const Activities = () => {
         </StatItem>
       </StatsRow>
 
-      {/* ── Flagship Initiatives ── */}
-      <InitiativesBlock>
-        <InitiativesEyebrow>Open Source &amp; Community</InitiativesEyebrow>
-        <InitiativesTitle>Flagship Initiatives</InitiativesTitle>
-        <InitiativeGrid>
-          <InitiativeCard href="https://observability.workshop.aws/" target="_blank" rel="noopener noreferrer">
-            <InitiativeText>
-              <InitiativeCardTitle>AWS Observability Workshop</InitiativeCardTitle>
-              <InitiativeCardMeta>60,000+ users · 5M+ page views · 75+ contributors</InitiativeCardMeta>
-            </InitiativeText>
-            <InitiativeArrow>›</InitiativeArrow>
-          </InitiativeCard>
+      {/* ── Tabs ── */}
+      <TabBar role="tablist" aria-label="Activities categories">
+        {TABS.map((tab) => (
+          <TabButton
+            key={tab.id}
+            role="tab"
+            aria-selected={activeTab === tab.id}
+            $active={activeTab === tab.id}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.label}
+          </TabButton>
+        ))}
+      </TabBar>
 
-          <InitiativeCard href="https://aws-observability.github.io/observability-best-practices/" target="_blank" rel="noopener noreferrer">
-            <InitiativeText>
-              <InitiativeCardTitle>AWS Observability Best Practices Guide</InitiativeCardTitle>
-              <InitiativeCardMeta>Community-maintained · Global team</InitiativeCardMeta>
-            </InitiativeText>
-            <InitiativeArrow>›</InitiativeArrow>
-          </InitiativeCard>
+      {/* ── Overview tab ── */}
+      {activeTab === 'overview' && (
+        <InitiativesBlock>
+          <InitiativesEyebrow>Open Source &amp; Community</InitiativesEyebrow>
+          <InitiativesTitle>Flagship Initiatives</InitiativesTitle>
+          <InitiativeGrid>
+            <InitiativeCard href="https://observability.workshop.aws/" target="_blank" rel="noopener noreferrer">
+              <InitiativeText>
+                <InitiativeCardTitle>AWS Observability Workshop</InitiativeCardTitle>
+                <InitiativeCardMeta>60,000+ users · 5M+ page views · 75+ contributors</InitiativeCardMeta>
+              </InitiativeText>
+              <InitiativeArrow>›</InitiativeArrow>
+            </InitiativeCard>
 
-          <InitiativeCard href="https://aws-samples.github.io/cloud-operations-best-practices/" target="_blank" rel="noopener noreferrer">
-            <InitiativeText>
-              <InitiativeCardTitle>AWS Cloud Operations Best Practices Guide</InitiativeCardTitle>
-              <InitiativeCardMeta>Maintained by a distributed SA team</InitiativeCardMeta>
-            </InitiativeText>
-            <InitiativeArrow>›</InitiativeArrow>
-          </InitiativeCard>
+            <InitiativeCard href="https://aws-observability.github.io/observability-best-practices/" target="_blank" rel="noopener noreferrer">
+              <InitiativeText>
+                <InitiativeCardTitle>AWS Observability Best Practices Guide</InitiativeCardTitle>
+                <InitiativeCardMeta>Community-maintained · Global team</InitiativeCardMeta>
+              </InitiativeText>
+              <InitiativeArrow>›</InitiativeArrow>
+            </InitiativeCard>
 
-          <InitiativeCard href="https://aws-observability.github.io/terraform-aws-observability-accelerator/" target="_blank" rel="noopener noreferrer">
-            <InitiativeText>
-              <InitiativeCardTitle>AWS Observability Accelerators</InitiativeCardTitle>
-              <InitiativeCardMeta>Terraform &amp; CDK · Amazon EKS native · 30K+ deployments</InitiativeCardMeta>
-            </InitiativeText>
-            <InitiativeArrow>›</InitiativeArrow>
-          </InitiativeCard>
+            <InitiativeCard href="https://aws-samples.github.io/cloud-operations-best-practices/" target="_blank" rel="noopener noreferrer">
+              <InitiativeText>
+                <InitiativeCardTitle>AWS Cloud Operations Best Practices Guide</InitiativeCardTitle>
+                <InitiativeCardMeta>Maintained by a distributed SA team</InitiativeCardMeta>
+              </InitiativeText>
+              <InitiativeArrow>›</InitiativeArrow>
+            </InitiativeCard>
 
-          <InitiativeCard href="https://aws-observability.github.io/observability-best-practices/maturity-model/" target="_blank" rel="noopener noreferrer">
-            <InitiativeText>
-              <InitiativeCardTitle>AWS Observability Maturity Model</InitiativeCardTitle>
-              <InitiativeCardMeta>Core framework for 4 GTM initiatives · Customer success guide</InitiativeCardMeta>
-            </InitiativeText>
-            <InitiativeArrow>›</InitiativeArrow>
-          </InitiativeCard>
-        </InitiativeGrid>
-      </InitiativesBlock>
+            <InitiativeCard href="https://aws-observability.github.io/terraform-aws-observability-accelerator/" target="_blank" rel="noopener noreferrer">
+              <InitiativeText>
+                <InitiativeCardTitle>AWS Observability Accelerators</InitiativeCardTitle>
+                <InitiativeCardMeta>Terraform &amp; CDK · Amazon EKS native · 30K+ deployments</InitiativeCardMeta>
+              </InitiativeText>
+              <InitiativeArrow>›</InitiativeArrow>
+            </InitiativeCard>
+
+            <InitiativeCard href="https://aws-observability.github.io/observability-best-practices/maturity-model/" target="_blank" rel="noopener noreferrer">
+              <InitiativeText>
+                <InitiativeCardTitle>AWS Observability Maturity Model</InitiativeCardTitle>
+                <InitiativeCardMeta>Core framework for 4 GTM initiatives · Customer success guide</InitiativeCardMeta>
+              </InitiativeText>
+              <InitiativeArrow>›</InitiativeArrow>
+            </InitiativeCard>
+          </InitiativeGrid>
+        </InitiativesBlock>
+      )}
+
+      {/* ── Speaking & Media tab ── */}
+      {activeTab === 'speaking' && (
+        <>
+          <SectionLabel>Media</SectionLabel>
+          <Subtitle>AWS Cloud Operations Show</Subtitle>
+
+          <ShowCard href="https://www.youtube.com/playlist?list=PLehXSATXjcQHj8bPSf0uZuQBoxJ7a7ag7" target="_blank" rel="noopener noreferrer">
+            <PlayIcon>
+              <FontAwesomeIcon icon={faPlay} />
+            </PlayIcon>
+            <ShowTitle>AWS Cloud Operations Show</ShowTitle>
+            <ShowDescription>
+              Join me for the AWS Cloud Operations Show where we dive deep into best practices, new features, and expert tips for managing and optimizing your AWS infrastructure.
+            </ShowDescription>
+            <ShowMeta>Bi-weekly livestream · 25,000+ views · Hosted by Imaya Kumar Jagannathan &amp; Team</ShowMeta>
+          </ShowCard>
+
+          <SectionDivider />
+
+          <SectionLabel>Global Conferences</SectionLabel>
+          <Subtitle>Speaking Engagements</Subtitle>
+
+          <CardGrid>
+            <ActivityCard href="https://www.linkedin.com/posts/imaya_observability-awssummit-aws-activity-7479163067075964929-xhxc" tint={TINTS.speaking}>
+              <CardTitle>Intelligent Observability: From Complexity to Clarity</CardTitle>
+              <CardMeta>AWS Summit 2026</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Washington, D.C.</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=Z-eo1FMhksg" tint={TINTS.speaking}>
+              <CardTitle>Behind the scenes: How AWS drives operational excellence &amp; reliability</CardTitle>
+              <CardMeta>AWS re:Invent 2025</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=2h1oaiyQ-oU" tint={TINTS.speaking}>
+              <CardTitle>Best practices for end-to-end digital experience monitoring</CardTitle>
+              <CardMeta>AWS re:Invent 2024</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=ziyTvW_jkxI" tint={TINTS.speaking}>
+              <CardTitle>Operating with AWS open source observability</CardTitle>
+              <CardMeta>AWS re:Invent 2023</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.linkedin.com/posts/imaya_fidelity-aws-observability-activity-7090013116192751616-NecF" tint={TINTS.speaking}>
+              <CardTitle>Fidelity's observability platform for telemetry</CardTitle>
+              <CardMeta>AWS Summit 2023</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>New York</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://youtu.be/pVTjCTXwk2I?t=6122" tint={TINTS.speaking}>
+              <CardTitle>Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus</CardTitle>
+              <CardMeta>AWS Summit 2023</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Washington, D.C.</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://youtu.be/LGD52z0LxAA?t=18048" tint={TINTS.speaking}>
+              <CardTitle>Operating Open Telemetry Collector for Scale and Resiliency</CardTitle>
+              <CardMeta>KubeCon 2023</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Amsterdam, Netherlands</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=2IJPpdp9xU0&t=591s&pp=ygUYYXdzIHJlaW52ZW50IGltYXlhIGt1bWFy" tint={TINTS.speaking}>
+              <CardTitle>Observability the Open Source Way</CardTitle>
+              <CardMeta>AWS re:Invent 2022</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=or7uFFyHIX0" tint={TINTS.speaking}>
+              <CardTitle>Full-stack observability and application monitoring with AWS</CardTitle>
+              <CardMeta>AWS Summit 2022</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>San Francisco, CA</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=GSHtAn5pTO8" tint={TINTS.speaking}>
+              <CardTitle>Implementing observability for .NET apps on AWS</CardTitle>
+              <CardMeta>AWS re:Invent 2021</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=MZ-4HzOC_ac&t=25191s" tint={TINTS.speaking}>
+              <CardTitle>Launching Amazon Managed Service for Prometheus</CardTitle>
+              <CardMeta>KubeCon EU 2021</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Virtual</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=iyHzC6DhRVw&t=1618s" tint={TINTS.speaking}>
+              <CardTitle>Observability the Open Source Way</CardTitle>
+              <CardMeta>AWS re:Invent 2021</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=_d_9xCfVBTM" tint={TINTS.speaking}>
+              <CardTitle>Increase availability with AWS observability solutions</CardTitle>
+              <CardMeta>AWS re:Invent 2020</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://d1.awsstatic.com/events/reinvent/2019/REPEAT_3_Monitoring_modern_apps_Containers,_microservices,_and_more_MGT308-R3.pdf" tint={TINTS.speaking}>
+              <CardTitle>Monitoring modern apps: Containers, microservices, and more</CardTitle>
+              <CardMeta>AWS re:Invent 2019</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=75p2ete1Cqo" tint={TINTS.speaking}>
+              <CardTitle>Thomson Reuters: How It Hosted NET App on ECS Using Windows Containers</CardTitle>
+              <CardMeta>AWS re:Invent 2018</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Las Vegas, NV</CardMeta>
+            </ActivityCard>
+          </CardGrid>
+
+          <SectionDivider />
+
+          <SectionLabel>Webinars &amp; Online Events</SectionLabel>
+          <Subtitle>Online Technical Sessions</Subtitle>
+
+          <CardGrid>
+            <ActivityCard href="https://www.youtube.com/watch?v=F6V4vscvOeY&t=114s" tint={TINTS.session}>
+              <CardTitle>CDK Observability Accelerator Deep Dive</CardTitle>
+              <CardMeta $color="#AF52DE">Containers from the Couch 2023</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=gTXACKl4GiI" tint={TINTS.session}>
+              <CardTitle>AWS Observability and Nobl9: A Journey to Optimize the Metrics Stack</CardTitle>
+              <CardMeta $color="#AF52DE">Nobl9 Webinar</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://youtu.be/7jMtbCDOIqw?t=854" tint={TINTS.session}>
+              <CardTitle>Launching EKS Observability Accelerator</CardTitle>
+              <CardMeta $color="#AF52DE">Containers from the Couch 2022</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=FXBZUtrld3k&t=1285s" tint={TINTS.session}>
+              <CardTitle>Accelerating Adoption of AWS Open-Source Observability Services</CardTitle>
+              <CardMeta $color="#AF52DE">AWS Online Tech Talks 2022</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=YlupF_OAGIg" tint={TINTS.session}>
+              <CardTitle>Implementing Observability with Amazon Managed Open Source Services</CardTitle>
+              <CardMeta $color="#AF52DE">AWS Online Tech Talk 2021</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://youtu.be/KZVemZLExnw?t=1050" tint={TINTS.session}>
+              <CardTitle>Launching Prometheus metrics support for Container Insights</CardTitle>
+              <CardMeta $color="#AF52DE">Containers from the Couch 2021</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=Bh71xBQe92I&t=1575s" tint={TINTS.session}>
+              <CardTitle>Monitoring container workloads with Amazon Managed Service for Prometheus and Grafana</CardTitle>
+              <CardMeta $color="#AF52DE">Containers from the Couch 2021</CardMeta>
+            </ActivityCard>
+          </CardGrid>
+        </>
+      )}
+
+      {/* ── Content & Publications tab ── */}
+      {activeTab === 'content' && (
+        <>
+          <SectionLabel>Developer Content</SectionLabel>
+          <Subtitle>.NET Development on AWS - Videos</Subtitle>
+
+          <CardGrid>
+            <ActivityCard href="https://www.youtube.com/watch?v=EF1NES9BX8c" tint={TINTS.dotnet}>
+              <CardTitle>Using AWS Lambda Layers in .NET</CardTitle>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=-6k-TFV3M8o" tint={TINTS.dotnet}>
+              <CardTitle>.NET, IoT, and Lambda</CardTitle>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=yBmxRdB--4Q" tint={TINTS.dotnet}>
+              <CardTitle>Amazon Translate Service through .NET</CardTitle>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=Q1RWpB2juKI" tint={TINTS.dotnet}>
+              <CardTitle>Perform Sentiment Analysis on a Text</CardTitle>
+            </ActivityCard>
+          </CardGrid>
+
+          <SectionDivider />
+
+          <SectionLabel>Editorial &amp; Press</SectionLabel>
+          <Subtitle>Publications and General Public Conferences</Subtitle>
+
+          <ArticleGrid>
+            <ActivityCard href="https://thenewstack.io/no-more-fomo-efficiency-in-slo-driven-monitoring/" tint={TINTS.publication}>
+              <CardTitle>SLO driven monitoring</CardTitle>
+              <CardMeta $color="#0071E3">The NewStack</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.dataversity.net/observability-maturity-model-a-framework-to-enhance-monitoring-and-observability-practices/" tint={TINTS.publication}>
+              <CardTitle>Observability Maturity Model: A Framework to Enhance Monitoring and Observability Practices</CardTitle>
+              <CardMeta $color="#0071E3">Dataversity</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://techstrong.tv/videos/interviews/sloconf-kit-merker-nobl9" tint={TINTS.publication}>
+              <CardTitle>Panel discussion on SLO monitoring</CardTitle>
+              <CardMeta $color="#0071E3">Techstrong.tv</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://www.youtube.com/watch?v=Yq3A85qHtnc" tint={TINTS.publication}>
+              <CardTitle>FOMO vs SLO driven monitoring</CardTitle>
+              <CardMeta $color="#0071E3">SLO Conf</CardMeta>
+            </ActivityCard>
+
+            <ActivityCard href="https://hopin.com/events/developerweek-global-cloud-2021#speakers" tint={TINTS.publication}>
+              <CardTitle>Observability in the Cloud</CardTitle>
+              <CardMeta $color="#0071E3">Developerweek conference</CardMeta>
+            </ActivityCard>
+          </ArticleGrid>
+        </>
+      )}
+
+      {/* ── Recognition & Career tab ── */}
+      {activeTab === 'recognition' && (
+        <>
+          <SectionLabel>Honors</SectionLabel>
+          <Subtitle>Recognitions and Awards</Subtitle>
+
+          <CardGrid>
+            <ActivityCard tint={TINTS.award}>
+              <CardTitle>AWS "Inspiration Award"</CardTitle>
+              <CardDescription>For mentoring worldwide technical architects to achieve exceptional results</CardDescription>
+            </ActivityCard>
+
+            <ActivityCard tint={TINTS.award}>
+              <CardTitle>"Top Resolver" of Specialist Requests</CardTitle>
+              <CardDescription>Awarded at AWS in the years 2021 and 2022</CardDescription>
+            </ActivityCard>
+
+            <ActivityCard tint={TINTS.award}>
+              <CardTitle>25+ Accolades from AWS Leaders</CardTitle>
+              <CardDescription>Recognized for contributions to key projects by senior technical employees and leaders</CardDescription>
+            </ActivityCard>
+
+            <ActivityCard tint={TINTS.award}>
+              <CardTitle>Accolades from Bill Gates</CardTitle>
+              <CardDescription>For my "Think Week" innovation paper about "Smart Advertisements in Television"</CardDescription>
+            </ActivityCard>
+
+            <ActivityCard tint={TINTS.award}>
+              <CardTitle>Award from Steve Ballmer</CardTitle>
+              <CardDescription>Received from Steve Ballmer for developing innovative tools in the largest Exchange migration project at Microsoft</CardDescription>
+            </ActivityCard>
+
+            <ActivityCard tint={TINTS.award}>
+              <CardTitle>CPE Champion Award</CardTitle>
+              <CardDescription>Awarded twice for high Customer Satisfaction at Microsoft</CardDescription>
+            </ActivityCard>
+          </CardGrid>
+
+          <SectionDivider />
+
+          <SectionLabel>Engineering Leadership · 2015–2018</SectionLabel>
+          <Subtitle>Bisk Education</Subtitle>
+
+          <MilestoneGrid>
+            <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+              <MilestoneTitle>Enterprise Architecture Strategy</MilestoneTitle>
+              <MilestoneDesc>Reporting to the CTO, defined and executed the enterprise architecture strategy — standardizing tool selection, consolidating the technology footprint, and reducing operational complexity across the organization.</MilestoneDesc>
+            </MilestoneCard>
+
+            <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+              <MilestoneTitle>Salesforce Organization-Wide Rollout</MilestoneTitle>
+              <MilestoneDesc>Led technical evaluation and org-wide implementation of Salesforce, establishing data-driven processes for pipeline management and executive reporting up to the CEO.</MilestoneDesc>
+            </MilestoneCard>
+
+            <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+              <MilestoneTitle>Internet-Scale Cloud Platform Design</MilestoneTitle>
+              <MilestoneDesc>Led architects in designing AWS-based internet-scale systems for student application processing, payments, online ordering, and university partner integrations — including a cloud-based ESB and API Management layer.</MilestoneDesc>
+            </MilestoneCard>
+
+            <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
+              <MilestoneTitle>Agile &amp; DevOps Transformation</MilestoneTitle>
+              <MilestoneDesc>Led a full engineering culture shift from waterfall to Agile/DevOps — introducing CI/CD pipelines, code reviews, and sprint retrospectives. Mentored junior engineers into senior roles, building a self-sustaining engineering culture that outlasted individual contributors.</MilestoneDesc>
+            </MilestoneCard>
+          </MilestoneGrid>
+
+          <SectionDivider />
+
+          <SectionLabel>Technology Programs · 2006–2014</SectionLabel>
+          <Subtitle>Microsoft</Subtitle>
+
+          <MilestoneGrid>
+            <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+              <MilestoneMetric $color="#0078D4">$2–3B</MilestoneMetric>
+              <MilestoneTitle>Global Technology Adoption Programs</MilestoneTitle>
+              <MilestoneDesc>Program managed 3 global TAPs for pre-release enterprise products — Windows Server, SQL Server, and SharePoint — across 15 countries and 150+ enterprise customers. Coordinated cross-functional teams of 18–20 spanning engineering, marketing, and GTM, influencing $2–3B in product revenue.</MilestoneDesc>
+            </MilestoneCard>
+
+            <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+              <MilestoneMetric $color="#0078D4">650K</MilestoneMetric>
+              <MilestoneTitle>Largest Exchange Migration in Microsoft History</MilestoneTitle>
+              <MilestoneDesc>Lead developer for a 650,000-mailbox Exchange Online migration over 18 months. Built migration tooling so critical that the third-party vendor incorporated it into their official product. Received the "Big Team" Global Award from Steve Ballmer.</MilestoneDesc>
+            </MilestoneCard>
+
+            <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+              <MilestoneMetric $color="#0078D4">500K+</MilestoneMetric>
+              <MilestoneTitle>AT&amp;T Mediaroom — Live &amp; VoD Television</MilestoneTitle>
+              <MilestoneDesc>Designed deployment architecture for Microsoft Mediaroom across 6 major US cities, enabling AT&amp;T television services for 500,000+ subscribers. Built automation tooling that reduced deployment errors by 45% and accelerated timelines by 60%.</MilestoneDesc>
+            </MilestoneCard>
+
+            <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
+              <MilestoneMetric $color="#0078D4">Think Week</MilestoneMetric>
+              <MilestoneTitle>Bill Gates Innovation Recognition</MilestoneTitle>
+              <MilestoneDesc>Selected from thousands of Microsoft employees for Bill Gates' annual "Think Week" program. Proposed "Smart Advertisements in Television" — context-aware interactive ads on Mediaroom predating what is now commonplace on streaming platforms. Personally recognized by Bill Gates.</MilestoneDesc>
+            </MilestoneCard>
+          </MilestoneGrid>
+        </>
+      )}
 
       <SectionDivider />
 
-      <SectionLabel>Media</SectionLabel>
-      <Subtitle>AWS Cloud Operations Show</Subtitle>
-
-      <ShowCard href="https://www.youtube.com/playlist?list=PLehXSATXjcQHj8bPSf0uZuQBoxJ7a7ag7" target="_blank" rel="noopener noreferrer">
-        <PlayIcon>
-          <FontAwesomeIcon icon={faPlay} />
-        </PlayIcon>
-        <ShowTitle>AWS Cloud Operations Show</ShowTitle>
-        <ShowDescription>
-          Join me for the AWS Cloud Operations Show where we dive deep into best practices, new features, and expert tips for managing and optimizing your AWS infrastructure.
-        </ShowDescription>
-        <ShowMeta>Bi-weekly livestream · 25,000+ views · Hosted by Imaya Kumar Jagannathan &amp; Team</ShowMeta>
-      </ShowCard>
-
-      <SectionDivider />
-
-      <SectionLabel>Global Conferences</SectionLabel>
-      <Subtitle>Speaking Engagements</Subtitle>
-
-      {/* First Row */}
-      <CardGrid>
-        <SpeakingCard href="https://www.youtube.com/watch?v=Z-eo1FMhksg" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Behind the scenes: How AWS drives operational excellence &amp; reliability</EventTitle>
-          <EventDate>AWS re:Invent 2025</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=2h1oaiyQ-oU" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Best practices for end-to-end digital experience monitoring</EventTitle>
-          <EventDate>AWS re:Invent 2024</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=ziyTvW_jkxI" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Operating with AWS open source observability</EventTitle>
-          <EventDate>AWS re:Invent 2023</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.linkedin.com/posts/imaya_fidelity-aws-observability-activity-7090013116192751616-NecF" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Fidelity's observability platform for telemetry</EventTitle>
-          <EventDate>AWS Summit 2023</EventDate>
-          <EventLocation>New York</EventLocation>
-        </SpeakingCard>
-      </CardGrid>
-
-      {/* Second Row */}
-      <CardGrid>
-        <SpeakingCard href="https://youtu.be/pVTjCTXwk2I?t=6122" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Monitoring Amazon EMR on EKS workloads using Amazon Managed Service for Prometheus</EventTitle>
-          <EventDate>AWS Summit 2023</EventDate>
-          <EventLocation>Washington DC</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://youtu.be/LGD52z0LxAA?t=18048" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Operating Open Telemetry Collector for Scale and Resiliency</EventTitle>
-          <EventDate>KubeCon 2023</EventDate>
-          <EventLocation>Amsterdam, Netherlands</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=2IJPpdp9xU0&t=591s&pp=ygUYYXdzIHJlaW52ZW50IGltYXlhIGt1bWFy" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Observability the Open Source Way</EventTitle>
-          <EventDate>AWS re:Invent 2022</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=or7uFFyHIX0" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Full-stack observability and application monitoring with AWS</EventTitle>
-          <EventDate>AWS Summit 2022</EventDate>
-          <EventLocation>San Francisco, CA</EventLocation>
-        </SpeakingCard>
-      </CardGrid>
-
-      {/* Third Row */}
-      <CardGrid>
-        <SpeakingCard href="https://www.youtube.com/watch?v=GSHtAn5pTO8" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Implementing observability for .NET apps on AWS</EventTitle>
-          <EventDate>AWS re:Invent 2021</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=MZ-4HzOC_ac&t=25191s" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Launching Amazon Managed Service for Prometheus</EventTitle>
-          <EventDate>KubeCon EU 2021</EventDate>
-          <EventLocation>Virtual</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=iyHzC6DhRVw&t=1618s" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Observability the Open Source Way</EventTitle>
-          <EventDate>AWS re:Invent 2021</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=_d_9xCfVBTM" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Increase availability with AWS observability solutions</EventTitle>
-          <EventDate>AWS re:Invent 2020</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-      </CardGrid>
-
-      <CardGrid>
-        <SpeakingCard href="https://d1.awsstatic.com/events/reinvent/2019/REPEAT_3_Monitoring_modern_apps_Containers,_microservices,_and_more_MGT308-R3.pdf" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Monitoring modern apps: Containers, microservices, and more</EventTitle>
-          <EventDate>AWS re:Invent 2019</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-
-        <SpeakingCard href="https://www.youtube.com/watch?v=75p2ete1Cqo" target="_blank" rel="noopener noreferrer">
-          <EventTitle>Thomson Reuters: How It Hosted NET App on ECS Using Windows Containers</EventTitle>
-          <EventDate>AWS re:Invent 2018</EventDate>
-          <EventLocation>Las Vegas, NV</EventLocation>
-        </SpeakingCard>
-      </CardGrid>
-
-      <SectionDivider />
-
-      <SectionLabel>Webinars &amp; Online Events</SectionLabel>
-      <Subtitle>Online Technical Sessions</Subtitle>
-
-      {/* First Row */}
-      <CardGrid>
-        <TechnicalSessionCard href="https://www.youtube.com/watch?v=F6V4vscvOeY&t=114s" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>CDK Observability Accelerator Deep Dive</TechnicalSessionTitle>
-          <TechnicalSessionDate>Containers from the Couch 2023</TechnicalSessionDate>
-        </TechnicalSessionCard>
-
-        <TechnicalSessionCard href="https://www.youtube.com/watch?v=gTXACKl4GiI" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>AWS Observability and Nobl9: A Journey to Optimize the Metrics Stack</TechnicalSessionTitle>
-          <TechnicalSessionDate>Nobl9 Webinar</TechnicalSessionDate>
-        </TechnicalSessionCard>
-
-        <TechnicalSessionCard href="https://youtu.be/7jMtbCDOIqw?t=854" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>Launching EKS Observability Accelerator</TechnicalSessionTitle>
-          <TechnicalSessionDate>Containers from the Couch 2022</TechnicalSessionDate>
-        </TechnicalSessionCard>
-
-        <TechnicalSessionCard href="https://www.youtube.com/watch?v=FXBZUtrld3k&t=1285s" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>Accelerating Adoption of AWS Open-Source Observability Services</TechnicalSessionTitle>
-          <TechnicalSessionDate>AWS Online Tech Talks 2022</TechnicalSessionDate>
-        </TechnicalSessionCard>
-      </CardGrid>
-
-      {/* Second Row */}
-      <CardGrid>
-        <TechnicalSessionCard href="https://www.youtube.com/watch?v=FXBZUtrld3k&t=1285s" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>Accelerating Adoption of AWS Open-Source Observability Services</TechnicalSessionTitle>
-          <TechnicalSessionDate>AWS Online Tech Talks 2022</TechnicalSessionDate>
-        </TechnicalSessionCard>
-
-        <TechnicalSessionCard href="https://www.youtube.com/watch?v=YlupF_OAGIg" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>Implementing Observability with Amazon Managed Open Source Services</TechnicalSessionTitle>
-          <TechnicalSessionDate>AWS Online Tech Talk 2021</TechnicalSessionDate>
-        </TechnicalSessionCard>
-
-        <TechnicalSessionCard href="https://youtu.be/KZVemZLExnw?t=1050" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>Launching Prometheus metrics support for Container Insights</TechnicalSessionTitle>
-          <TechnicalSessionDate>Containers from the Couch 2021</TechnicalSessionDate>
-        </TechnicalSessionCard>
-
-        <TechnicalSessionCard href="https://www.youtube.com/watch?v=Bh71xBQe92I&t=1575s" target="_blank" rel="noopener noreferrer">
-          <TechnicalSessionTitle>Monitoring container workloads with Amazon Managed Service for Prometheus and Grafana</TechnicalSessionTitle>
-          <TechnicalSessionDate>Containers from the Couch 2021</TechnicalSessionDate>
-        </TechnicalSessionCard>
-      </CardGrid>
-
-      <SectionDivider />
-
-      <SectionLabel>Developer Content</SectionLabel>
-      <Subtitle>.NET Development on AWS - Videos</Subtitle>
-
-      <CardGrid>
-        <DotNetCard href="https://www.youtube.com/watch?v=EF1NES9BX8c" target="_blank" rel="noopener noreferrer">
-          <DotNetCardTitle>Using AWS Lambda Layers in .NET</DotNetCardTitle>
-        </DotNetCard>
-
-        <DotNetCard href="https://www.youtube.com/watch?v=-6k-TFV3M8o" target="_blank" rel="noopener noreferrer">
-          <DotNetCardTitle>.NET, IoT, and Lambda</DotNetCardTitle>
-        </DotNetCard>
-
-        <DotNetCard href="https://www.youtube.com/watch?v=yBmxRdB--4Q" target="_blank" rel="noopener noreferrer">
-          <DotNetCardTitle>Amazon Translate Service through .NET</DotNetCardTitle>
-        </DotNetCard>
-
-        <DotNetCard href="https://www.youtube.com/watch?v=Q1RWpB2juKI" target="_blank" rel="noopener noreferrer">
-          <DotNetCardTitle>Perform Sentiment Analysis on a Text</DotNetCardTitle>
-        </DotNetCard>
-      </CardGrid>
-
-      <SectionDivider />
-
-      <SectionLabel>Editorial &amp; Press</SectionLabel>
-      <Subtitle>Publications and General Public Conferences</Subtitle>
-
-      <ArticleGrid>
-        <PublicationCard href="https://thenewstack.io/no-more-fomo-efficiency-in-slo-driven-monitoring/" target="_blank" rel="noopener noreferrer">
-          <PublicationTitle>SLO driven monitoring</PublicationTitle>
-          <PublicationSource>The NewStack</PublicationSource>
-        </PublicationCard>
-
-        <PublicationCard href="https://www.dataversity.net/observability-maturity-model-a-framework-to-enhance-monitoring-and-observability-practices/" target="_blank" rel="noopener noreferrer">
-          <PublicationTitle>Observability Maturity Model: A Framework to Enhance Monitoring and Observability Practices</PublicationTitle>
-          <PublicationSource>Dataversity</PublicationSource>
-        </PublicationCard>
-
-        <PublicationCard href="https://techstrong.tv/videos/interviews/sloconf-kit-merker-nobl9" target="_blank" rel="noopener noreferrer">
-          <PublicationTitle>Panel discussion on SLO monitoring</PublicationTitle>
-          <PublicationSource>Techstrong.tv</PublicationSource>
-        </PublicationCard>
-
-        <PublicationCard href="https://www.youtube.com/watch?v=Yq3A85qHtnc" target="_blank" rel="noopener noreferrer">
-          <PublicationTitle>FOMO vs SLO driven monitoring</PublicationTitle>
-          <PublicationSource>SLO Conf</PublicationSource>
-        </PublicationCard>
-
-        <PublicationCard href="https://hopin.com/events/developerweek-global-cloud-2021#speakers" target="_blank" rel="noopener noreferrer">
-          <PublicationTitle>Observability in the Cloud</PublicationTitle>
-          <PublicationSource>Developerweek conference</PublicationSource>
-        </PublicationCard>
-      </ArticleGrid>
-
-      <SectionDivider />
-
-      <SectionLabel>Honors</SectionLabel>
-      <Subtitle>Recognitions and Awards</Subtitle>
-
-      <CardGrid>
-        <AwardCard>
-          <AwardTitle>AWS "Inspiration Award"</AwardTitle>
-          <AwardDescription>For mentoring worldwide technical architects to achieve exceptional results</AwardDescription>
-        </AwardCard>
-
-        <AwardCard>
-          <AwardTitle>"Top Resolver" of Specialist Requests</AwardTitle>
-          <AwardDescription>Awarded at AWS in the years 2021 and 2022</AwardDescription>
-        </AwardCard>
-
-        <AwardCard>
-          <AwardTitle>25+ Accolades from AWS Leaders</AwardTitle>
-          <AwardDescription>Recognized for contributions to key projects by senior technical employees and leaders</AwardDescription>
-        </AwardCard>
-
-        <AwardCard>
-          <AwardTitle>Accolades from Bill Gates</AwardTitle>
-          <AwardDescription>For my "Think Week" innovation paper about "Smart Advertisements in Television"</AwardDescription>
-        </AwardCard>
-
-        <AwardCard>
-          <AwardTitle>Award from Steve Ballmer</AwardTitle>
-          <AwardDescription>Received from Steve Ballmer for developing innovative tools in the largest Exchange migration project at Microsoft</AwardDescription>
-        </AwardCard>
-
-        <AwardCard>
-          <AwardTitle>CPE Champion Award</AwardTitle>
-          <AwardDescription>Awarded twice for high Customer Satisfaction at Microsoft</AwardDescription>
-        </AwardCard>
-      </CardGrid>
-
-      <SectionDivider />
-
-      <SectionLabel>Engineering Leadership · 2015–2018</SectionLabel>
-      <Subtitle>Bisk Education</Subtitle>
-
-      <MilestoneGrid>
-        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
-          <MilestoneTitle>Enterprise Architecture Strategy</MilestoneTitle>
-          <MilestoneDesc>Reporting to the CTO, defined and executed the enterprise architecture strategy — standardizing tool selection, consolidating the technology footprint, and reducing operational complexity across the organization.</MilestoneDesc>
-        </MilestoneCard>
-
-        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
-          <MilestoneTitle>Salesforce Organization-Wide Rollout</MilestoneTitle>
-          <MilestoneDesc>Led technical evaluation and org-wide implementation of Salesforce, establishing data-driven processes for pipeline management and executive reporting up to the CEO.</MilestoneDesc>
-        </MilestoneCard>
-
-        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
-          <MilestoneTitle>Internet-Scale Cloud Platform Design</MilestoneTitle>
-          <MilestoneDesc>Led architects in designing AWS-based internet-scale systems for student application processing, payments, online ordering, and university partner integrations — including a cloud-based ESB and API Management layer.</MilestoneDesc>
-        </MilestoneCard>
-
-        <MilestoneCard $accent="rgba(52, 199, 89, 0.05)">
-          <MilestoneTitle>Agile &amp; DevOps Transformation</MilestoneTitle>
-          <MilestoneDesc>Led a full engineering culture shift from waterfall to Agile/DevOps — introducing CI/CD pipelines, code reviews, and sprint retrospectives. Mentored junior engineers into senior roles, building a self-sustaining engineering culture that outlasted individual contributors.</MilestoneDesc>
-        </MilestoneCard>
-      </MilestoneGrid>
-
-      <SectionDivider />
-
-      <SectionLabel>Technology Programs · 2006–2014</SectionLabel>
-      <Subtitle>Microsoft</Subtitle>
-
-      <MilestoneGrid>
-        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
-          <MilestoneMetric $color="#0078D4">$2–3B</MilestoneMetric>
-          <MilestoneTitle>Global Technology Adoption Programs</MilestoneTitle>
-          <MilestoneDesc>Program managed 3 global TAPs for pre-release enterprise products — Windows Server, SQL Server, and SharePoint — across 15 countries and 150+ enterprise customers. Coordinated cross-functional teams of 18–20 spanning engineering, marketing, and GTM, influencing $2–3B in product revenue.</MilestoneDesc>
-        </MilestoneCard>
-
-        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
-          <MilestoneMetric $color="#0078D4">650K</MilestoneMetric>
-          <MilestoneTitle>Largest Exchange Migration in Microsoft History</MilestoneTitle>
-          <MilestoneDesc>Lead developer for a 650,000-mailbox Exchange Online migration over 18 months. Built migration tooling so critical that the third-party vendor incorporated it into their official product. Received the "Big Team" Global Award from Steve Ballmer.</MilestoneDesc>
-        </MilestoneCard>
-
-        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
-          <MilestoneMetric $color="#0078D4">500K+</MilestoneMetric>
-          <MilestoneTitle>AT&amp;T Mediaroom — Live &amp; VoD Television</MilestoneTitle>
-          <MilestoneDesc>Designed deployment architecture for Microsoft Mediaroom across 6 major US cities, enabling AT&amp;T television services for 500,000+ subscribers. Built automation tooling that reduced deployment errors by 45% and accelerated timelines by 60%.</MilestoneDesc>
-        </MilestoneCard>
-
-        <MilestoneCard $accent="rgba(0, 120, 212, 0.05)">
-          <MilestoneMetric $color="#0078D4">Think Week</MilestoneMetric>
-          <MilestoneTitle>Bill Gates Innovation Recognition</MilestoneTitle>
-          <MilestoneDesc>Selected from thousands of Microsoft employees for Bill Gates' annual "Think Week" program. Proposed "Smart Advertisements in Television" — context-aware interactive ads on Mediaroom predating what is now commonplace on streaming platforms. Personally recognized by Bill Gates.</MilestoneDesc>
-        </MilestoneCard>
-      </MilestoneGrid>
-
-      <SectionDivider />
-
-      {/* Collapsible Section */}
+      {/* ── Press mentions — always visible regardless of active tab ── */}
       <CollapsibleSection>
         <Subtitle onClick={toggleCollapse} style={{ cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           Mentions on 3rd Party Websites

@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import ReactGA from 'react-ga4';
+import theme from './theme';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import Activities from './pages/Activities';
 import Books from './pages/Books';
@@ -12,6 +15,7 @@ function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    ReactGA.send({ hitType: 'pageview', page: pathname });
   }, [pathname]);
   return null;
 }
@@ -28,20 +32,23 @@ const MainContent = styled.main`
 
 function App() {
   return (
-    <Router>
-      <AppContainer>
-        <ScrollToTop />
-        <Navbar />
-        <MainContent>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/activities" element={<Activities />} />
-            <Route path="/books" element={<Books />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
-        </MainContent>
-      </AppContainer>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <AppContainer>
+          <ScrollToTop />
+          <Navbar />
+          <MainContent>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/activities" element={<Activities />} />
+              <Route path="/books" element={<Books />} />
+              <Route path="/resume" element={<Resume />} />
+            </Routes>
+          </MainContent>
+          <Footer />
+        </AppContainer>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -402,7 +402,11 @@ const Resume = () => {
         <ContactLine>
           <span>Atlanta, GA</span>
           <ContactDot>·</ContactDot>
+          <a href="tel:+18133622924">+1 (813) 362-2924</a>
+          <ContactDot>·</ContactDot>
           <a href="mailto:imayakumar@outlook.com">imayakumar@outlook.com</a>
+          <ContactDot>·</ContactDot>
+          <a href="https://imayakumar.com" target="_blank" rel="noopener noreferrer">imayakumar.com</a>
           <ContactDot>·</ContactDot>
           <a href="https://linkedin.com/in/imaya" target="_blank" rel="noopener noreferrer">linkedin.com/in/imaya</a>
           <ContactDot>·</ContactDot>
@@ -453,6 +457,7 @@ const Resume = () => {
             'Change Management & Innovation',
             'Cloud Architecture',
             'Digital Transformation',
+            'Trust, Safety & Compliance Systems (adjacent)',
           ].map(c => <Pill key={c}>{c}</Pill>)}
         </PillGrid>
         <TechLabel>
@@ -572,6 +577,9 @@ const Resume = () => {
               </Achievement>
               <Achievement>
                 <strong>Early Big Data:</strong> Program managed early-stage Hadoop and Big Data initiatives, partnering with principal engineers and enterprise customers to validate emerging data platform technologies before mainstream adoption.
+              </Achievement>
+              <Achievement>
+                <strong>Customer Advisory &amp; Trust:</strong> Led 7+ application compatibility and virtualization projects for US enterprise customers. Served as technology advisor on SharePoint Cloud Pack development and deployment, establishing trusted relationships with enterprise stakeholders.
               </Achievement>
             </AchievementList>
           </Job>
