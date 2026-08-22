@@ -695,6 +695,12 @@ const Activities = () => {
           <Subtitle>Speaking Engagements</Subtitle>
 
           <CardGrid>
+            <ActivityCard href="https://www.linkedin.com/posts/imaya_had-a-blast-at-renderatl-render-atlanta-activity-7493991472753594369-bnzO/" tint={TINTS.speaking}>
+              <CardTitle>Observability in the AI Era</CardTitle>
+              <CardMeta>RenderATL 2026</CardMeta>
+              <CardMeta $color="#FF9F0A" $bold>Atlanta, GA</CardMeta>
+            </ActivityCard>
+
             <ActivityCard href="https://www.linkedin.com/posts/imaya_observability-awssummit-aws-activity-7479163067075964929-xhxc" tint={TINTS.speaking}>
               <CardTitle>Intelligent Observability: From Complexity to Clarity</CardTitle>
               <CardMeta>AWS Summit 2026</CardMeta>
