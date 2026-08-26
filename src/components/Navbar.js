@@ -6,11 +6,8 @@ const NavWrapper = styled.nav`
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  transition: background 0.3s ease;
+  background: ${({ theme }) => theme.colors.background};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 const NavInner = styled.div`
@@ -21,27 +18,21 @@ const NavInner = styled.div`
   margin: 0 auto;
   padding: 0 2rem;
   height: 52px;
+  gap: 1rem;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    height: auto;
-    padding: 0.85rem 1.5rem;
-    gap: 0.6rem;
+    padding: 0 1.25rem;
   }
 `;
 
 const NavBrand = styled(Link)`
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.ink};
   letter-spacing: -0.02em;
   text-decoration: none;
-  transition: opacity 0.2s ease;
   white-space: nowrap;
-
-  &:hover {
-    opacity: 0.6;
-  }
+  flex-shrink: 0;
 `;
 
 const NavList = styled.ul`
@@ -50,45 +41,55 @@ const NavList = styled.ul`
   margin: 0;
   padding: 0;
   gap: 0.15rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
-    justify-content: center;
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
-const NavItem = styled.li``;
+const NavItem = styled.li`
+  flex-shrink: 0;
+`;
 
-const NavLink = styled(Link)`
-  position: relative;
+const navLinkStyle = `
   text-decoration: none;
-  color: ${props => props.$isActive ? props.theme.colors.ink : props.theme.colors.gray};
-  font-weight: ${props => props.$isActive ? '600' : '400'};
-  font-size: 0.9rem;
-  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.7rem;
   border-radius: 8px;
-  transition: all 0.18s ease;
+  white-space: nowrap;
   display: block;
-  letter-spacing: -0.01em;
+`;
+
+const NavAnchor = styled.a`
+  ${navLinkStyle}
+  color: ${({ theme }) => theme.colors.gray};
 
   &:hover {
     color: ${({ theme }) => theme.colors.ink};
-    background: rgba(0, 0, 0, 0.06);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0.8rem;
-    right: 0.8rem;
-    bottom: 0.1rem;
-    height: 2px;
-    border-radius: 1px;
-    background: ${({ theme }) => theme.colors.accentBlue};
-    opacity: ${props => props.$isActive ? 1 : 0};
-    transition: opacity 0.18s ease;
   }
 `;
+
+const NavRouteLink = styled(Link)`
+  ${navLinkStyle}
+  color: ${({ $isActive, theme }) => ($isActive ? theme.colors.ink : theme.colors.gray)};
+  font-weight: ${({ $isActive }) => ($isActive ? '600' : '400')};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.ink};
+  }
+`;
+
+const sections = [
+  { id: 'about', label: 'About' },
+  { id: 'work', label: 'Work' },
+  { id: 'speaking', label: 'Speaking' },
+  { id: 'writing', label: 'Writing' },
+  { id: 'book', label: 'Book' },
+  { id: 'recognition', label: 'Recognition' },
+];
 
 const Navbar = () => {
   const location = useLocation();
@@ -98,17 +99,17 @@ const Navbar = () => {
       <NavInner>
         <NavBrand to="/">Imaya Kumar</NavBrand>
         <NavList>
+          {sections.map((s) => (
+            <NavItem key={s.id}>
+              <NavAnchor href={`${location.pathname === '/' ? '' : '/'}#${s.id}`}>
+                {s.label}
+              </NavAnchor>
+            </NavItem>
+          ))}
           <NavItem>
-            <NavLink to="/" $isActive={location.pathname === "/"}>Home</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/activities" $isActive={location.pathname === "/activities"}>Activities</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/books" $isActive={location.pathname === "/books"}>Book</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/resume" $isActive={location.pathname === "/resume"}>Resume</NavLink>
+            <NavRouteLink to="/resume" $isActive={location.pathname === '/resume'}>
+              Resume
+            </NavRouteLink>
           </NavItem>
         </NavList>
       </NavInner>

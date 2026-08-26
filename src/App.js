@@ -6,17 +6,22 @@ import theme from './theme';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Activities from './pages/Activities';
-import Books from './pages/Books';
 import Resume from './pages/Resume';
 import './App.css';
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
+function ScrollToTopOrHash() {
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: pathname + hash });
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView();
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-    ReactGA.send({ hitType: 'pageview', page: pathname });
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -35,13 +40,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <AppContainer>
-          <ScrollToTop />
+          <ScrollToTopOrHash />
           <Navbar />
           <MainContent>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/activities" element={<Activities />} />
-              <Route path="/books" element={<Books />} />
               <Route path="/resume" element={<Resume />} />
             </Routes>
           </MainContent>

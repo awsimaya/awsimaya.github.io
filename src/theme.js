@@ -7,21 +7,13 @@ const theme = {
     gray: '#6E6E73',
     grayLight: '#86868B',
     grayLine: '#C7C7CC',
+    border: 'rgba(0, 0, 0, 0.08)',
     accentBlue: '#0071E3',
-    accentGreen: '#30D158',
-    accentPurple: '#AF52DE',
     accentOrange: '#FF9500',
-    accentOrangeLight: '#FF9F0A',
-    accentRed: '#FF3B30',
-    booksGradient: {
-      from: '#1A1A1C',
-      mid: '#2A2A2E',
-      to: '#1C1C2E',
-    },
   },
   radii: {
     pill: '980px',
-    card: '16px',
+    card: '12px',
   },
   spacing: {
     xs: '0.5rem',
