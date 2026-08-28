@@ -6,12 +6,12 @@ import { faLinkedin, faGithub, faBluesky } from '@fortawesome/free-brands-svg-ic
 
 const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.colors.bandBackground};
-  padding: 1.5rem 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.75rem 2rem;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 const FooterInner = styled.div`
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@ const Copyright = styled.p`
 
 const SocialLinks = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 1.1rem;
 `;
 
 const SocialLink = styled.a`
@@ -42,14 +42,14 @@ const SocialLink = styled.a`
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.ink};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
 const FooterLinks = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 `;
 
 const FooterLink = styled(Link)`
@@ -58,7 +58,7 @@ const FooterLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.ink};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
@@ -68,7 +68,7 @@ const FooterAnchor = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.ink};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 

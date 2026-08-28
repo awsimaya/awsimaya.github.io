@@ -3,26 +3,27 @@ import styled from 'styled-components';
 import SectionHeading from '../components/SectionHeading';
 
 const Section = styled.section`
-  padding: 2rem 2rem 4rem;
+  padding: 2.5rem 2rem 4.5rem;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
 
   @media (max-width: 780px) {
-    padding: 2rem 1.25rem 3rem;
+    padding: 2.25rem 1.25rem 3.5rem;
   }
 `;
 
 const Inner = styled.div`
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 `;
 
 const SubLabel = styled.p`
-  font-size: 0.72rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.grayLine};
-  margin: 2rem 0 1rem 0;
+  color: ${({ theme }) => theme.colors.grayLight};
+  margin: 2.75rem 0 1.25rem 0;
 
   &:first-child {
     margin-top: 0;
@@ -32,33 +33,33 @@ const SubLabel = styled.p`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
+  column-gap: 2.5rem;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const Card = styled.div`
-  background: ${({ theme }) => theme.colors.background};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.card};
-  padding: 1.1rem 1.25rem;
+const Row = styled.div`
+  padding: 1.1rem 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
-const CardTitle = styled.p`
-  font-size: 0.9rem;
+const RowTitle = styled.p`
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-size: 1.02rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.ink};
   margin: 0 0 0.4rem 0;
   line-height: 1.4;
 `;
 
-const CardDescription = styled.p`
-  font-size: 0.82rem;
+const RowDescription = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.86rem;
   color: ${({ theme }) => theme.colors.gray};
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 `;
 
 const awards = [
@@ -92,30 +93,30 @@ const Recognition = () => (
       <SubLabel>Awards &amp; Recognition</SubLabel>
       <Grid>
         {awards.map((a) => (
-          <Card key={a.title}>
-            <CardTitle>{a.title}</CardTitle>
-            <CardDescription>{a.description}</CardDescription>
-          </Card>
+          <Row key={a.title}>
+            <RowTitle>{a.title}</RowTitle>
+            <RowDescription>{a.description}</RowDescription>
+          </Row>
         ))}
       </Grid>
 
       <SubLabel>Bisk Education · Engineering Leadership · 2015–2018</SubLabel>
       <Grid>
         {biskMilestones.map((m) => (
-          <Card key={m.title}>
-            <CardTitle>{m.title}</CardTitle>
-            <CardDescription>{m.description}</CardDescription>
-          </Card>
+          <Row key={m.title}>
+            <RowTitle>{m.title}</RowTitle>
+            <RowDescription>{m.description}</RowDescription>
+          </Row>
         ))}
       </Grid>
 
       <SubLabel>Microsoft · Technology Programs · 2006–2014</SubLabel>
       <Grid>
         {msftMilestones.map((m) => (
-          <Card key={m.title}>
-            <CardTitle>{m.title}</CardTitle>
-            <CardDescription>{m.description}</CardDescription>
-          </Card>
+          <Row key={m.title}>
+            <RowTitle>{m.title}</RowTitle>
+            <RowDescription>{m.description}</RowDescription>
+          </Row>
         ))}
       </Grid>
     </Inner>

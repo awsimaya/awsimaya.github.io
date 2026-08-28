@@ -3,71 +3,72 @@ import styled from 'styled-components';
 import SectionHeading from '../components/SectionHeading';
 
 const Section = styled.section`
-  padding: 2rem 2rem 3.5rem;
+  padding: 2.5rem 2rem 4rem;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
 
   @media (max-width: 780px) {
-    padding: 2rem 1.25rem 2.5rem;
+    padding: 2.25rem 1.25rem 3rem;
   }
 `;
 
 const Inner = styled.div`
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 `;
 
 const Group = styled.div`
-  margin-top: 2rem;
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid ${({ theme }) => theme.colors.border};
 
   &:first-of-type {
-    margin-top: 1.5rem;
+    margin-top: 2.25rem;
   }
 `;
 
 const GroupLabel = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.grayLine};
-  margin: 0 0 0.85rem 0;
+  color: ${({ theme }) => theme.colors.grayLight};
+  margin: 0 0 1.5rem 0;
 `;
 
 const StatGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(${({ $cols }) => $cols || 4}, 1fr);
-  gap: 1px;
-  background: ${({ theme }) => theme.colors.border};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.card};
-  overflow: hidden;
+  gap: 2rem 1.75rem;
 
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1.25rem;
   }
 `;
 
 const StatCell = styled.div`
-  background: ${({ theme }) => theme.colors.background};
-  padding: 1.1rem 1rem;
-  text-align: center;
+  border-left: 1px solid ${({ theme }) => theme.colors.grayLine};
+  padding-left: 1.1rem;
 `;
 
 const StatValue = styled.p`
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: ${({ theme }) => theme.colors.ink};
-  letter-spacing: -0.03em;
-  margin: 0 0 0.3rem 0;
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-size: 2rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.accent};
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem 0;
   line-height: 1;
 `;
 
 const StatLabel = styled.p`
-  font-size: 0.75rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.82rem;
   color: ${({ theme }) => theme.colors.gray};
-  font-weight: 500;
+  font-weight: 400;
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.4;
 `;
 
 const scale = [

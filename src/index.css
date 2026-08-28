@@ -9,8 +9,8 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #1D1D1F;
+  background-color: #FAF8F3;
+  color: #1A1A18;
 }
 
 code {
@@ -19,11 +19,6 @@ code {
 
 * {
   box-sizing: border-box;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select, option {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 }
 
 a {
@@ -31,14 +26,18 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: rgba(31, 77, 58, 0.16);
+}
+
 .highlighted-link {
-  color: #0071E3;
+  color: #1F4D3A;
   font-weight: 500;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  border-bottom: 1px solid rgba(31, 77, 58, 0.35);
+  transition: border-color 0.2s ease;
 }
 
 .highlighted-link:hover {
-  opacity: 0.75;
-  text-decoration: underline;
+  border-color: #1F4D3A;
 }

@@ -1,55 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionHeading from '../components/SectionHeading';
-import LinkCard from '../components/LinkCard';
+import IndexList from '../components/IndexList';
 
 const Section = styled.section`
-  padding: 2rem 2rem 3.5rem;
+  padding: 2.5rem 2rem 4rem;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
 
   @media (max-width: 780px) {
-    padding: 2rem 1.25rem 2.5rem;
+    padding: 2.25rem 1.25rem 3rem;
   }
 `;
 
 const Inner = styled.div`
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 `;
 
 const SubLabel = styled.p`
-  font-size: 0.72rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.grayLine};
-  margin: 0 0 1rem 0;
+  color: ${({ theme }) => theme.colors.grayLight};
+  margin: 0 0 0.75rem 0;
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+const ListBlock = styled.div`
+  margin-bottom: 3rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ArticleGrid = styled(Grid)`
-  grid-template-columns: repeat(3, 1fr);
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -57,23 +39,28 @@ const PressList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.4rem 1.5rem;
+  columns: 2;
+  column-gap: 2.5rem;
 
   @media (max-width: 600px) {
-    grid-template-columns: 1fr;
+    columns: 1;
   }
 `;
 
 const PressItem = styled.li`
+  break-inside: avoid;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+
   a {
-    color: ${({ theme }) => theme.colors.accentBlue};
+    font-family: ${({ theme }) => theme.fonts.body};
+    color: ${({ theme }) => theme.colors.inkSoft};
     font-size: 0.88rem;
     text-decoration: none;
+    line-height: 1.5;
 
     &:hover {
-      text-decoration: underline;
+      color: ${({ theme }) => theme.colors.accent};
     }
   }
 `;
@@ -136,28 +123,26 @@ const Writing = () => (
     <Inner>
       <SectionHeading eyebrow="Content & Publications" title="Writing & Developer Content" />
 
-      <SubLabel>.NET Development on AWS — Videos</SubLabel>
-      <Grid>
-        {dotnetVideos.map((v) => (
-          <LinkCard key={v.href} {...v} />
-        ))}
-      </Grid>
+      <ListBlock>
+        <SubLabel>.NET Development on AWS — Videos</SubLabel>
+        <IndexList items={dotnetVideos} />
+      </ListBlock>
 
-      <SubLabel>Editorial &amp; Press</SubLabel>
-      <ArticleGrid>
-        {articles.map((a) => (
-          <LinkCard key={a.href} {...a} />
-        ))}
-      </ArticleGrid>
+      <ListBlock>
+        <SubLabel>Editorial &amp; Press</SubLabel>
+        <IndexList items={articles} />
+      </ListBlock>
 
-      <SubLabel>Mentions on 3rd Party Websites</SubLabel>
-      <PressList>
-        {pressMentions.map((p) => (
-          <PressItem key={p.href}>
-            <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title}</a>
-          </PressItem>
-        ))}
-      </PressList>
+      <ListBlock>
+        <SubLabel>Mentions on 3rd Party Websites</SubLabel>
+        <PressList>
+          {pressMentions.map((p) => (
+            <PressItem key={p.href}>
+              <a href={p.href} target="_blank" rel="noopener noreferrer">{p.title}</a>
+            </PressItem>
+          ))}
+        </PressList>
+      </ListBlock>
     </Inner>
   </Section>
 );

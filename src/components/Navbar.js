@@ -6,7 +6,9 @@ const NavWrapper = styled.nav`
   position: sticky;
   top: 0;
   z-index: 100;
-  background: ${({ theme }) => theme.colors.background};
+  background: rgba(250, 248, 243, 0.9);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
@@ -14,10 +16,10 @@ const NavInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 2rem;
-  height: 52px;
+  height: 60px;
   gap: 1rem;
 
   @media (max-width: 768px) {
@@ -26,10 +28,12 @@ const NavInner = styled.div`
 `;
 
 const NavBrand = styled(Link)`
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.ink};
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -40,7 +44,7 @@ const NavList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 0.15rem;
+  gap: 0.3rem;
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -55,12 +59,14 @@ const NavItem = styled.li`
 `;
 
 const navLinkStyle = `
+  font-family: 'Inter', sans-serif;
   text-decoration: none;
-  font-size: 0.85rem;
-  padding: 0.45rem 0.7rem;
-  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.5rem 0.65rem;
   white-space: nowrap;
   display: block;
+  position: relative;
 `;
 
 const NavAnchor = styled.a`
@@ -68,17 +74,17 @@ const NavAnchor = styled.a`
   color: ${({ theme }) => theme.colors.gray};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.ink};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
 const NavRouteLink = styled(Link)`
   ${navLinkStyle}
-  color: ${({ $isActive, theme }) => ($isActive ? theme.colors.ink : theme.colors.gray)};
-  font-weight: ${({ $isActive }) => ($isActive ? '600' : '400')};
+  color: ${({ $isActive, theme }) => ($isActive ? theme.colors.accent : theme.colors.gray)};
+  font-weight: ${({ $isActive }) => ($isActive ? '600' : '500')};
 
   &:hover {
-    color: ${({ theme }) => theme.colors.ink};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 

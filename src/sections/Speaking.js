@@ -3,96 +3,106 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import SectionHeading from '../components/SectionHeading';
-import LinkCard from '../components/LinkCard';
+import IndexList from '../components/IndexList';
 
 const Section = styled.section`
-  padding: 2rem 2rem 3.5rem;
+  padding: 2.5rem 2rem 4rem;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
 
   @media (max-width: 780px) {
-    padding: 2rem 1.25rem 2.5rem;
+    padding: 2.25rem 1.25rem 3rem;
   }
 `;
 
 const Inner = styled.div`
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
 `;
 
 const ShowCard = styled.a`
-  display: block;
-  background: ${({ theme }) => theme.colors.background};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: ${({ theme }) => theme.radii.card};
-  padding: 1.5rem;
-  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.75rem 0 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.ink};
-  position: relative;
+  color: inherit;
 
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.accentBlue};
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 1rem;
   }
 `;
 
 const PlayIcon = styled.div`
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  width: 34px;
-  height: 34px;
-  background: ${({ theme }) => theme.colors.ink};
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.colors.accent};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  font-size: 0.68rem;
+  color: ${({ theme }) => theme.colors.accent};
+  font-size: 0.72rem;
+  transition: background 0.18s ease, color 0.18s ease;
+
+  ${ShowCard}:hover & {
+    background: ${({ theme }) => theme.colors.accent};
+    color: #ffffff;
+  }
 `;
 
+const ShowBody = styled.div``;
+
 const ShowTitle = styled.h3`
-  font-size: 1.05rem;
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 500;
   margin: 0 0 0.6rem 0;
-  font-weight: 600;
   color: ${({ theme }) => theme.colors.ink};
-  padding-right: 3rem;
+
+  ${ShowCard}:hover & {
+    color: ${({ theme }) => theme.colors.accent};
+  }
 `;
 
 const ShowDescription = styled.p`
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: ${({ theme }) => theme.colors.gray};
-  margin: 0 0 0.75rem 0;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: ${({ theme }) => theme.colors.inkSoft};
+  margin: 0 0 0.85rem 0;
+  max-width: 620px;
 `;
 
 const ShowMeta = styled.p`
-  font-size: 0.82rem;
-  color: ${({ theme }) => theme.colors.accentBlue};
-  font-weight: 500;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.grayLight};
   margin: 0;
 `;
 
 const SubLabel = styled.p`
-  font-size: 0.72rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.grayLine};
-  margin: 0 0 1rem 0;
+  color: ${({ theme }) => theme.colors.grayLight};
+  margin: 0 0 0.75rem 0;
 `;
 
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+const ListBlock = styled.div`
+  margin-bottom: 3rem;
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -134,26 +144,24 @@ const Speaking = () => (
         <PlayIcon>
           <FontAwesomeIcon icon={faPlay} />
         </PlayIcon>
-        <ShowTitle>AWS Cloud Operations Show</ShowTitle>
-        <ShowDescription>
-          Join me for the AWS Cloud Operations Show where we dive deep into best practices, new features, and expert tips for managing and optimizing your AWS infrastructure.
-        </ShowDescription>
-        <ShowMeta>Bi-weekly livestream · 25,000+ views · Hosted by Imaya Kumar Jagannathan &amp; Team</ShowMeta>
+        <ShowBody>
+          <ShowTitle>AWS Cloud Operations Show</ShowTitle>
+          <ShowDescription>
+            Join me for the AWS Cloud Operations Show where we dive deep into best practices, new features, and expert tips for managing and optimizing your AWS infrastructure.
+          </ShowDescription>
+          <ShowMeta>Bi-weekly livestream · 25,000+ views · Hosted by Imaya Kumar Jagannathan &amp; Team</ShowMeta>
+        </ShowBody>
       </ShowCard>
 
-      <SubLabel>Global Conferences</SubLabel>
-      <Grid>
-        {engagements.map((e) => (
-          <LinkCard key={e.href} {...e} />
-        ))}
-      </Grid>
+      <ListBlock>
+        <SubLabel>Global Conferences</SubLabel>
+        <IndexList items={engagements} />
+      </ListBlock>
 
-      <SubLabel>Webinars &amp; Online Events</SubLabel>
-      <Grid style={{ marginBottom: 0 }}>
-        {webinars.map((w) => (
-          <LinkCard key={w.href} {...w} />
-        ))}
-      </Grid>
+      <ListBlock>
+        <SubLabel>Webinars &amp; Online Events</SubLabel>
+        <IndexList items={webinars} />
+      </ListBlock>
     </Inner>
   </Section>
 );

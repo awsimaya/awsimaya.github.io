@@ -36,8 +36,9 @@ const DownloadButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: #1D1D1F;
+  background: #1F4D3A;
   color: #ffffff;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
   padding: 0.6rem 1.25rem;
@@ -48,9 +49,9 @@ const DownloadButton = styled.button`
   transition: all 0.22s ease;
 
   &:hover {
-    background: #3D3D3F;
+    background: #163b2c;
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(31, 77, 58, 0.25);
   }
 `;
 
@@ -74,10 +75,11 @@ const ResumeHeader = styled.div`
 `;
 
 const Name = styled.h1`
+  font-family: 'Fraunces', Georgia, serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  color: #1D1D1F;
-  letter-spacing: -0.05em;
+  font-weight: 600;
+  color: #1A1A18;
+  letter-spacing: -0.02em;
   line-height: 1;
   margin: 0 0 0.5rem 0;
 `;
@@ -85,7 +87,7 @@ const Name = styled.h1`
 const HeadlineRole = styled.p`
   font-size: 1.05rem;
   font-weight: 500;
-  color: #0071E3;
+  color: #1F4D3A;
   margin: 0 0 1rem 0;
   letter-spacing: -0.01em;
 `;
@@ -96,7 +98,7 @@ const ContactLine = styled.div`
   align-items: center;
   gap: 0.6rem;
   font-size: 0.72rem;
-  color: #6E6E73;
+  color: #6B675E;
   white-space: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
@@ -107,7 +109,7 @@ const ContactLine = styled.div`
   }
 
   a {
-    color: #0071E3;
+    color: #1F4D3A;
     text-decoration: none;
     font-weight: 500;
 
@@ -119,7 +121,7 @@ const ContactLine = styled.div`
 `;
 
 const ContactDot = styled.span`
-  color: #C7C7CC;
+  color: #D9D2C1;
 `;
 
 /* ─── Section Primitives ─── */
@@ -140,7 +142,7 @@ const SectionTitle = styled.h2`
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0071E3;
+  color: #1F4D3A;
   margin: 0;
   white-space: nowrap;
 `;
@@ -148,7 +150,7 @@ const SectionTitle = styled.h2`
 const SectionRule = styled.div`
   flex: 1;
   height: 1px;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(26, 26, 24, 0.09);
 `;
 
 /* ─── Executive Summary ─── */
@@ -156,7 +158,7 @@ const SectionRule = styled.div`
 const SummaryText = styled.p`
   font-size: 0.97rem;
   line-height: 1.8;
-  color: #3D3D3F;
+  color: #3D3B34;
   margin: 0 0 0.9rem 0;
 `;
 
@@ -174,20 +176,20 @@ const Pill = styled.span`
   font-weight: 500;
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.05);
-  color: #3D3D3F;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: rgba(26, 26, 24, 0.05);
+  color: #3D3B34;
+  border: 1px solid rgba(26, 26, 24, 0.07);
   letter-spacing: -0.005em;
 `;
 
 const TechLabel = styled.p`
   font-size: 0.78rem;
-  color: #86868B;
+  color: #8C8778;
   line-height: 1.7;
   margin: 0.75rem 0 0 0;
 
   strong {
-    color: #3D3D3F;
+    color: #3D3B34;
     font-weight: 600;
   }
 `;
@@ -203,10 +205,10 @@ const ExperienceList = styled.div`
 const Job = styled.div`
   position: relative;
   padding-left: 1.25rem;
-  border-left: 2px solid rgba(0, 0, 0, 0.07);
+  border-left: 2px solid rgba(26, 26, 24, 0.07);
 
   &:hover {
-    border-left-color: #0071E3;
+    border-left-color: #1F4D3A;
   }
 
   transition: border-left-color 0.2s ease;
@@ -227,26 +229,26 @@ const JobCompany = styled.div`
 const JobCompanyName = styled.h3`
   font-size: 1rem;
   font-weight: 700;
-  color: #1D1D1F;
+  color: #1A1A18;
   margin: 0;
   letter-spacing: -0.02em;
 `;
 
 const JobLocation = styled.span`
   font-size: 0.8rem;
-  color: #86868B;
+  color: #8C8778;
 `;
 
 const JobTitle = styled.p`
   font-size: 0.88rem;
   font-weight: 600;
-  color: #0071E3;
+  color: #1F4D3A;
   margin: 0 0 0.15rem 0;
 `;
 
 const JobDates = styled.p`
   font-size: 0.78rem;
-  color: #86868B;
+  color: #8C8778;
   margin: 0;
   font-weight: 500;
 `;
@@ -263,7 +265,7 @@ const AchievementList = styled.ul`
 const Achievement = styled.li`
   font-size: 0.875rem;
   line-height: 1.72;
-  color: #3D3D3F;
+  color: #3D3B34;
   padding-left: 1.1rem;
   position: relative;
 
@@ -271,7 +273,7 @@ const Achievement = styled.li`
     content: '·';
     position: absolute;
     left: 0;
-    color: #0071E3;
+    color: #1F4D3A;
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.55;
@@ -279,7 +281,7 @@ const Achievement = styled.li`
 
   strong {
     font-weight: 600;
-    color: #1D1D1F;
+    color: #1A1A18;
   }
 `;
 
@@ -298,7 +300,7 @@ const AwardItem = styled.div`
   align-items: baseline;
   font-size: 0.875rem;
   line-height: 1.6;
-  color: #3D3D3F;
+  color: #3D3B34;
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
@@ -308,18 +310,18 @@ const AwardItem = styled.div`
 
 const AwardName = styled.span`
   font-weight: 600;
-  color: #1D1D1F;
+  color: #1A1A18;
   white-space: nowrap;
 
   &::before {
     content: '· ';
-    color: #0071E3;
+    color: #1F4D3A;
     font-weight: 700;
   }
 
   &::after {
     content: ':';
-    color: #C7C7CC;
+    color: #D9D2C1;
     font-weight: 400;
   }
 
@@ -329,7 +331,7 @@ const AwardName = styled.span`
 `;
 
 const AwardDesc = styled.span`
-  color: #6E6E73;
+  color: #6B675E;
 `;
 
 /* ─── Publications ─── */
@@ -355,18 +357,18 @@ const PubItem = styled.div`
 `;
 
 const PubBullet = styled.span`
-  color: #0071E3;
+  color: #1F4D3A;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.55;
 `;
 
 const PubText = styled.span`
-  color: #3D3D3F;
+  color: #3D3B34;
 
   strong {
     font-weight: 600;
-    color: #1D1D1F;
+    color: #1A1A18;
   }
 `;
 
@@ -381,16 +383,16 @@ const EduList = styled.div`
 const EduItem = styled.div`
   font-size: 0.875rem;
   line-height: 1.6;
-  color: #3D3D3F;
+  color: #3D3B34;
 `;
 
 const EduDegree = styled.span`
   font-weight: 600;
-  color: #1D1D1F;
+  color: #1A1A18;
 `;
 
 const EduMeta = styled.span`
-  color: #86868B;
+  color: #8C8778;
 `;
 
 /* ─── Component ─── */
