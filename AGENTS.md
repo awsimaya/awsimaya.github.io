@@ -8,10 +8,12 @@ Imaya Kumar Jagannathan, hosted at **imayakumar.com** (custom domain via
 
 A single scrolling home page plus one separate page:
 
-- `/` — one long page: Hero → About (impact stats) → Work (open source) →
-  Speaking → Writing (articles/press) → Book → Recognition. Navigated via a
-  sticky top nav with in-page anchor links (`#about`, `#work`, `#speaking`,
-  `#writing`, `#book`, `#recognition`).
+- `/` — one long page: Hero → About (impact stats) → Leadership (org/budget/
+  talent stats) → Recognition (awards + career milestones) → Work (flagship
+  technical initiatives) → a `#thought-leadership` wrapper div containing
+  Speaking → Writing (articles/press) → Book. Navigated via a sticky top nav
+  with in-page anchor links (`#about`, `#leadership`, `#recognition`,
+  `#work`, `#thought-leadership`).
 - `/resume` — a separate, printable resume page (own route, own "Download
   PDF" button that calls `window.print()`).
 
@@ -23,7 +25,34 @@ things to preserve if you touch this again:**
    Work/Speaking/etc.) unless the owner explicitly asks to split it up again.
 2. Keep content complete — the owner explicitly chose to keep every
    speaking engagement / article / press mention fully listed rather than
-   trimmed or collapsed. Don't quietly cut list items when editing a section.
+   trimmed or collapsed (2026 exception: the "Mentions on 3rd Party
+   Websites" list was explicitly removed by the owner). Don't quietly cut
+   list items when editing a section otherwise.
+
+### Positioning shift (2026): evangelist → org-leadership
+
+The owner explicitly repositioned the site away from reading as a developer
+evangelist (heavy on speaking/writing/community) toward reading as an
+organizational-leadership candidate (VP overseeing Solutions Architecture
+and/or Engineering). What changed and why, so a future agent doesn't
+"simplify" it back:
+- `Hero` now leads with an executive positioning line ("Technology
+  Executive — Organizational Leadership in...") above the literal job
+  title, not the other way around.
+- A new `src/sections/Leadership.js` section was added — org size, budget/
+  P&L ownership, talent/hiring stats, executive stakeholder engagement, and
+  an org-leadership-milestones list — and placed high in page order
+  (right after About, before Recognition/Work).
+- Speaking/Writing/Book (the most evangelist-coded content) were **not
+  deleted** — they were grouped under one `#thought-leadership` nav entry
+  and pushed to the bottom of the page, still fully listed per the
+  content-completeness rule above.
+- Several real stats needed for the Leadership section (direct reports,
+  people-managers led, budget/opex owned, hiring/promotion/retention
+  counts, countries covered, and 2-4 concrete leadership-milestone stories)
+  were **not fabricated** — see `src/components/Placeholder.js` below.
+  If the owner has since supplied these, replace the placeholder chips with
+  real values; don't leave them in a "finished" site.
 
 ## Stack
 
@@ -41,14 +70,18 @@ things to preserve if you touch this again:**
 - `src/pages/Resume.js` — the resume page, self-contained, has its own
   print stylesheet (`@media print`).
 - `src/sections/*.js` — one file per home-page section (`Hero`, `About`,
-  `Work`, `Speaking`, `Writing`, `Book`, `Recognition`). **Content arrays
-  (speaking engagements, articles, press mentions, chapters, awards, etc.)
-  live inline in these files** — that's where to add/edit/remove an entry,
-  not in a separate data file.
+  `Leadership`, `Recognition`, `Work`, `Speaking`, `Writing`, `Book`).
+  **Content arrays (speaking engagements, articles, press mentions,
+  chapters, awards, etc.) live inline in these files** — that's where to
+  add/edit/remove an entry, not in a separate data file.
 - `src/components/` — shared UI: `Navbar`, `Footer`, `SectionHeading`
-  (eyebrow + title, used by every section), `LinkCard` (the flat
-  title/meta/description card used for speaking engagements, webinars,
-  videos, articles).
+  (eyebrow + title, used by every section), `IndexList` (the numbered-row
+  list with dotted leaders used for speaking engagements, webinars,
+  articles, flagship initiatives), `Placeholder` (`Placeholder` inline chip
+  + `PlaceholderBlock` callout — gold dashed-border markers for real
+  numbers/stories the owner hasn't supplied yet; used in `Hero`,
+  `Leadership`, and `Resume`. Replace with real content once supplied,
+  don't leave shipped).
 - `src/theme.js` — design tokens (colors, radii, spacing, breakpoints).
 
 ## Visual style

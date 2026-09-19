@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faBluesky } from '@fortawesome/free-brands-svg-icons';
+import { Placeholder } from '../components/Placeholder';
 
 const Section = styled.section`
   padding: 5.5rem 2rem 4rem;
@@ -69,6 +70,15 @@ const Role = styled.p`
   font-size: 1.05rem;
   color: ${({ theme }) => theme.colors.accent};
   font-weight: 500;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.5;
+`;
+
+const JobTitle = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.86rem;
+  color: ${({ theme }) => theme.colors.gray};
+  font-weight: 400;
   margin: 0 0 1.35rem 0;
   line-height: 1.5;
 `;
@@ -228,13 +238,16 @@ const Hero = () => (
 
         <Name>Imaya Kumar Jagannathan</Name>
 
-        <Role>Sr. Mgr, WW Specialist SA | Principal Specialist SA · AWS</Role>
+        <Role>Technology Executive — Organizational Leadership in Cloud Engineering &amp; Solutions Architecture</Role>
+        <JobTitle>Sr. Mgr, WW Specialist SA | Principal Specialist SA · AWS</JobTitle>
 
         <Bio>
-          Technology executive with 22+ years building scalable systems and
-          leading AI-powered transformation at global scale. Currently leading
-          a worldwide technical organization at AWS supporting a $4.2B business —
-          published author, keynote speaker, and recognized thought leader.
+          22+ years building and leading global engineering and solutions-architecture
+          organizations. Currently leading a worldwide technical organization at AWS
+          supporting a $4.2B business — <Placeholder>ADD #</Placeholder> direct reports,{' '}
+          <Placeholder>ADD #</Placeholder> people-managers, <Placeholder>ADD $</Placeholder> budget
+          owned — partnering with CTOs, CIOs, and VPs of Engineering to set technical
+          strategy at scale. Published author and recognized thought leader.
         </Bio>
 
         <CareerRow>

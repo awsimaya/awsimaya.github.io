@@ -90,11 +90,10 @@ const NavRouteLink = styled(Link)`
 
 const sections = [
   { id: 'about', label: 'About' },
-  { id: 'work', label: 'Work' },
-  { id: 'speaking', label: 'Speaking' },
-  { id: 'writing', label: 'Writing' },
-  { id: 'book', label: 'Book' },
+  { id: 'leadership', label: 'Leadership' },
   { id: 'recognition', label: 'Recognition' },
+  { id: 'work', label: 'Work' },
+  { id: 'thought-leadership', label: 'Thought Leadership' },
 ];
 
 const Navbar = () => {

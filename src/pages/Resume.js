@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import { Placeholder, PlaceholderBlock } from '../components/Placeholder';
 
 const PrintStyles = createGlobalStyle`
   @media print {
@@ -84,10 +85,18 @@ const Name = styled.h1`
   margin: 0 0 0.5rem 0;
 `;
 
-const HeadlineRole = styled.p`
+const PositioningLine = styled.p`
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #1F4D3A;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.01em;
+`;
+
+const HeadlineRole = styled.p`
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #6B675E;
   margin: 0 0 1rem 0;
   letter-spacing: -0.01em;
 `;
@@ -411,6 +420,7 @@ const Resume = () => {
       {/* ── Header ── */}
       <ResumeHeader>
         <Name>Imaya Kumar Jagannathan</Name>
+        <PositioningLine>Technology Executive — Organizational Leadership in Cloud Engineering &amp; Solutions Architecture</PositioningLine>
         <HeadlineRole>Sr. Mgr, WW Specialist SA | Principal Specialist SA · AWS</HeadlineRole>
         <ContactLine>
           <span>Atlanta, GA</span>
@@ -436,7 +446,8 @@ const Resume = () => {
         <SummaryText>
           Technology executive with 22+ years of experience building scalable technical systems, leading cross-functional
           teams, and driving AI-powered transformation at global scale. Currently leading a worldwide technical organization
-          at AWS supporting a $4.2B business, designing platforms, infrastructure, and tooling adopted by 60,000+ users
+          at AWS supporting a $4.2B business — <Placeholder>ADD #</Placeholder> direct reports, <Placeholder>ADD #</Placeholder> people-managers,
+          and <Placeholder>ADD $</Placeholder> in annual budget owned — designing platforms, infrastructure, and tooling adopted by 60,000+ users
           and deployed in 30,000+ customer environments. Proven track record of establishing operating models for technical
           teams, defining strategy and roadmaps across complex organizational boundaries, and partnering with engineering,
           product, policy, and operations stakeholders to deliver reliable, scalable solutions.
@@ -448,6 +459,10 @@ const Resume = () => {
           with 250,000+ annual views. Published author and recognized thought leader who brings both strategic vision
           and hands-on technical depth.
         </SummaryText>
+        <PlaceholderBlock>
+          Add: 1–2 sentences on organizational scale (headcount, budget) and a signature leadership win (a reorg,
+          a leadership-pipeline build, or a strategic pivot you drove) — this is what a VP search committee reads first.
+        </PlaceholderBlock>
       </Section>
 
       {/* ── Core Competencies ── */}
@@ -471,6 +486,8 @@ const Resume = () => {
             'Cloud Architecture',
             'Digital Transformation',
             'Trust, Safety & Compliance Systems (adjacent)',
+            'P&L & Budget Ownership',
+            'Org Design & Workforce Planning',
           ].map(c => <Pill key={c}>{c}</Pill>)}
         </PillGrid>
         <TechLabel>
@@ -499,7 +516,7 @@ const Resume = () => {
             </JobHeader>
             <AchievementList>
               <Achievement>
-                <strong>Technical Organization Leadership:</strong> Built and led a worldwide technical organization supporting a $4.2B Cloud Operations business. Established the operating model, including goal setting, strategic project prioritization, performance evaluation, hiring, and talent development. Oversaw the Technical Field Community, a virtual organization of 1,500+ technical professionals worldwide.
+                <strong>Technical Organization Leadership:</strong> Built and led a worldwide technical organization of <Placeholder>ADD #</Placeholder> (including <Placeholder>ADD #</Placeholder> people-managers) supporting a $4.2B Cloud Operations business, with <Placeholder>ADD $</Placeholder> in annual budget owned. Established the operating model, including goal setting, strategic project prioritization, performance evaluation, hiring, and talent development. Also oversaw the Technical Field Community, a virtual organization of 1,500+ technical professionals worldwide.
               </Achievement>
               <Achievement>
                 <strong>Scalable Platforms &amp; Infrastructure:</strong> Architected and delivered the Terraform and CDK Accelerator for observability services, adopted by 100+ organizations and deployed in 30,000+ customer environments. Created the AWS Observability Workshop (observability.workshop.aws), serving 60,000+ users with 5M+ page views, growing from a solo effort to 75+ contributors across 3 continents.

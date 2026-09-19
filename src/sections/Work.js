@@ -52,7 +52,7 @@ const Work = () => (
   <Section id="work">
     <Inner>
       <SectionHeading
-        eyebrow="Open Source & Community"
+        eyebrow="Platforms & Execution"
         title="Flagship Initiatives"
       />
       <IndexList items={initiatives} />
