@@ -551,13 +551,22 @@ const Resume = () => {
             </JobHeader>
             <AchievementList>
               <Achievement>
-                <strong>Technical Strategy:</strong> Reporting to the CTO, defined and executed the enterprise architecture strategy. Developed a tool selection methodology that consolidated the technology footprint, reducing cost and operational complexity. Led technical evaluation and org-wide rollout of Salesforce with reporting up to the CEO.
+                <strong>Organizational Leadership:</strong> Directly managed 5 Senior Architects and a Software Development Manager (20 developers); dotted-line oversight of QA (8), Marketing Technology (15), and Infrastructure (10) — roughly 59 technical professionals in total. Owned a $10M team budget (salary &amp; operations) plus a $20M software licensing budget.
+              </Achievement>
+              <Achievement>
+                <strong>Technical Strategy:</strong> Reporting to the CTO, defined and executed the enterprise architecture strategy. Developed a tool selection methodology that consolidated the technology footprint, reducing cost and operational complexity across the organization.
+              </Achievement>
+              <Achievement>
+                <strong>Org-Wide Restructuring &amp; Agile Transformation:</strong> Restructured the Software Development, Marketing Technology, Student Support, Infrastructure, and Database Management teams for increased agility, collaboration, and innovation. Introduced Agile principles and restructured sprint cycles, standardizing on Git and Azure DevOps for source control, CI/CD, and release management.
+              </Achievement>
+              <Achievement>
+                <strong>CRM &amp; Telephony Platform Modernization:</strong> Led a full platform evaluation — Salesforce vs. Microsoft Dynamics CRM, and Five9 vs. Avaya, NICE, and 8x8 for telephony — assessing features, supportability, integration, and cost. Migrated off a legacy self-managed CRM to Salesforce, one of the largest CRM migrations in the southeast U.S. at the time, and off a self-hosted telephony system to Five9, with reporting up to the CEO.
               </Achievement>
               <Achievement>
                 <strong>Cloud Platform Design:</strong> Led a team of architects designing AWS-based, internet-scale systems for student application processing, payments, online ordering, and university partner integrations. Architected a cloud-based ESB and API Management layer for seamless third-party integration.
               </Achievement>
               <Achievement>
-                <strong>Team &amp; Culture Transformation:</strong> Managed architects and developers through a full organizational shift from waterfall to Agile/DevOps, introducing CI/CD pipelines, code reviews, sprint retrospectives, and engineering best practices. Mentored junior engineers into senior technical roles, building a self-sustaining engineering culture.
+                <strong>Talent Development:</strong> Mentored junior engineers into senior technical roles, building a self-sustaining engineering culture that outlasted individual contributors.
               </Achievement>
             </AchievementList>
           </Job>

@@ -101,6 +101,16 @@ const MilestoneRow = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
+const MilestoneMeta = styled.p`
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.accent};
+  margin: 0 0 0.35rem 0;
+`;
+
 const MilestoneTitle = styled.p`
   font-family: ${({ theme }) => theme.fonts.display};
   font-size: 1.02rem;
@@ -141,20 +151,23 @@ const talent = [
 
 const milestones = [
   {
-    title: <Placeholder>Add: an org-scaling or restructuring story</Placeholder>,
-    description: 'What changed, why you drove it, and the measurable outcome — headcount growth, a reorg, a new operating model rollout, etc.',
+    meta: 'Bisk Education · 2015–2018',
+    title: 'Org-Wide Restructuring & Agile Transformation',
+    description: 'Restructured Software Development, Marketing Technology, Student Support, Infrastructure, and Database Management for increased agility, collaboration, and innovation. Directly managed 5 Senior Architects and a Software Development Manager (20 developers); dotted-line oversight of QA (8), Marketing Technology (15), and Infrastructure (10) — roughly 59 professionals total.',
   },
   {
-    title: <Placeholder>Add: an executive/board-level initiative</Placeholder>,
-    description: 'A strategy you set or presented at the VP/exec level — a budget ask, a roadmap pivot, an org design proposal.',
+    meta: 'Bisk Education · 2015–2018',
+    title: 'CRM & Telephony Platform Modernization',
+    description: 'Evaluated Salesforce vs. Microsoft Dynamics CRM and Five9 vs. Avaya, NICE, and 8x8 on features, supportability, integration, and cost. Migrated off a legacy self-managed CRM to Salesforce — one of the largest CRM migrations in the southeast U.S. at the time — and onto Five9 for telephony, reporting up to the CEO.',
   },
   {
-    title: <Placeholder>Add: a talent or culture initiative</Placeholder>,
-    description: 'A leadership-pipeline, hiring-surge, or culture-change effort you personally drove, and its result.',
+    meta: 'Bisk Education · 2015–2018',
+    title: 'Budget & Talent Ownership',
+    description: 'Owned a $10M team budget (salary & operations) and a $20M software licensing budget. Mentored junior engineers into senior technical roles, building a self-sustaining engineering culture.',
   },
   {
-    title: <Placeholder>Add: a cross-org or M&A / vendor initiative (if applicable)</Placeholder>,
-    description: 'Delete this row if it doesn’t apply — otherwise, describe scope and outcome.',
+    title: <Placeholder>Add: an AWS-era org-scaling or executive/board-level initiative</Placeholder>,
+    description: 'A strategy you set or presented at the VP/exec level, or a reorg/operating-model change in your current org — a budget ask, a roadmap pivot, an org design proposal.',
   },
 ];
 
@@ -220,6 +233,7 @@ const Leadership = () => (
         <MilestoneGrid>
           {milestones.map((m, i) => (
             <MilestoneRow key={i}>
+              {m.meta && <MilestoneMeta>{m.meta}</MilestoneMeta>}
               <MilestoneTitle>{m.title}</MilestoneTitle>
               <MilestoneDescription>{m.description}</MilestoneDescription>
             </MilestoneRow>

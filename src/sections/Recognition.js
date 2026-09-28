@@ -72,10 +72,11 @@ const awards = [
 ];
 
 const biskMilestones = [
+  { title: 'Organizational Scope & Budget', description: 'Directly managed 5 Senior Architects and a Software Development Manager (20 developers), with dotted-line oversight of QA (8), Marketing Technology (15), and Infrastructure (10) — roughly 59 technical professionals. Owned a $10M team budget (salary & operations) and a $20M software licensing budget.' },
   { title: 'Enterprise Architecture Strategy', description: 'Reporting to the CTO, defined and executed the enterprise architecture strategy — standardizing tool selection, consolidating the technology footprint, and reducing operational complexity across the organization.' },
-  { title: 'Salesforce Organization-Wide Rollout', description: 'Led technical evaluation and org-wide implementation of Salesforce, establishing data-driven processes for pipeline management and executive reporting up to the CEO.' },
+  { title: 'CRM & Telephony Platform Modernization', description: 'Led a full platform evaluation — Salesforce vs. Microsoft Dynamics CRM, and Five9 vs. Avaya, NICE, and 8x8 for telephony — before migrating off a legacy self-managed CRM to Salesforce (one of the largest CRM migrations in the southeast U.S. at the time) and off a self-hosted telephony system to Five9, with reporting up to the CEO.' },
   { title: 'Internet-Scale Cloud Platform Design', description: 'Led architects in designing AWS-based internet-scale systems for student application processing, payments, online ordering, and university partner integrations — including a cloud-based ESB and API Management layer.' },
-  { title: 'Agile & DevOps Transformation', description: 'Led a full engineering culture shift from waterfall to Agile/DevOps — introducing CI/CD pipelines, code reviews, and sprint retrospectives. Mentored junior engineers into senior roles, building a self-sustaining engineering culture that outlasted individual contributors.' },
+  { title: 'Org-Wide Restructuring & Agile Transformation', description: 'Restructured the Software Development, Marketing Technology, Student Support, Infrastructure, and Database Management teams for increased agility, collaboration, and innovation. Introduced Agile principles and restructured sprint cycles, standardizing on Git and Azure DevOps. Mentored junior engineers into senior roles, building a self-sustaining engineering culture that outlasted individual contributors.' },
 ];
 
 const msftMilestones = [
